@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import SpaceAstronaut from '../components/SpaceAstronaut.astro';
+import SpaceMoon from '../components/SpaceMoon.astro';
+---
+
+<Base
+  title="404 — Seite nicht gefunden | ohara.systems"
+  description="Diese Seite existiert nicht."
+  lang="de"
+  canonicalPath="/404"
+>
+  <style>
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.15; transform: scale(1); }
+      50%       { opacity: 1;    transform: scale(1.5); }
+    }
+    @keyframes drift {
+      0%,  100% { transform: translateY(0px)   rotate(-4deg); }
+      33%        { transform: translateY(-14px) rotate(2deg);  }
+      66%        { transform: translateY(6px)   rotate(-6deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 0.9; }
+    }
+
+    .star-dot { animation: twinkle var(--dur, 3s) ease-in-out infinite; animation-delay: var(--del, 0s); }
+    .astronaut-drift { animation: drift 8s ease-in-out infinite; }
+    .error-glow      { animation: pulseGlow 3s ease-in-out infinite; }
+  </style>
+
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-20 bg-[#0a0a0f]">
+
+    <!-- Stars -->
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.1s;--del:0s;   width:2px;height:2px; top:5%;  left:8%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.4s;--del:0.8s; width:1px;height:1px; top:12%; left:18%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.8s;--del:0.3s; width:2px;height:2px; top:8%;  left:32%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:4s;  --del:1.2s; width:3px;height:3px; top:4%;  left:62%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.5s;--del:0.5s; width:1px;height:1px; top:15%; left:75%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.1s;--del:1.8s; width:2px;height:2px; top:25%; left:88%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.2s;--del:0.9s; width:1px;height:1px; top:40%; left:5%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.7s;--del:2.1s; width:2px;height:2px; top:60%; left:92%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.9s;--del:0.4s; width:1px;height:1px; top:72%; left:15%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.3s;--del:1.5s; width:2px;height:2px; top:80%; left:45%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:4.2s;--del:0.7s; width:1px;height:1px; top:88%; left:78%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.6s;--del:2.4s; width:2px;height:2px; top:92%; left:30%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.0s;--del:1.1s; width:1px;height:1px; top:50%; left:50%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:2.4s;--del:1.7s; width:3px;height:3px; top:30%; left:55%"></div>
+      <div class="star-dot absolute rounded-full bg-white" style="--dur:3.8s;--del:0.2s; width:1px;height:1px; top:20%; left:42%"></div>
+    </div>
+
+    <!-- Orbiting moon (behind everything) -->
+    <div class="pointer-events-none absolute" style="top:52%; left:50%;" aria-hidden="true">
+      <SpaceMoon size={90} orbitRadius={260} orbitDuration={40} />
+    </div>
+
+    <!-- 404 number -->
+    <div class="relative z-10 select-none" aria-hidden="true">
+      <div class="text-[clamp(6rem,22vw,14rem)] font-black leading-none tracking-tighter"
+        style="background:linear-gradient(135deg,#38bdf8 0%,#818cf8 50%,#e879f9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        404
+      </div>
+    </div>
+
+    <!-- Floating astronaut -->
+    <div class="relative z-10 -mt-6 mb-10 astronaut-drift" aria-hidden="true">
+      <SpaceAstronaut width={120} height={132} />
+    </div>
+
+    <!-- Text + CTAs -->
+    <div class="relative z-10 text-center max-w-lg">
+      <h1 class="text-3xl font-bold text-white mb-3 tracking-tight">Seite nicht gefunden</h1>
+      <p class="text-white/50 text-base leading-relaxed mb-8">
+        Diese Seite ist irgendwo im Universum verloren gegangen.<br/>
+        Aber keine Sorge — wir finden den Weg zurück.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/"
+          class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200">
+          Zurück zur Startseite
+        </a>
+        <a href="https://blog.ohara.systems"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200">
+          Blog lesen
+        </a>
+      </div>
+    </div>
+
+    <!-- Ambient glow -->
+    <div class="error-glow pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[120px]"
+      style="background:radial-gradient(ellipse,rgba(129,140,248,0.08) 0%,transparent 70%)"></div>
+
+  </section>
+</Base>

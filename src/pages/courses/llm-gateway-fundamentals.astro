@@ -1,0 +1,82 @@
+---
+import CoursePage from '../../layouts/CoursePage.astro';
+---
+
+<CoursePage
+  title="LLM Gateway Fundamentals"
+  description="Was ein LLM Gateway macht, wann du einen brauchst und wie du Model Prism Schritt für Schritt aufbaust. Ideal für alle, die neu in der Thematik sind."
+  lang="de"
+  courseTitle="LLM Gateway Fundamentals"
+  chapter={1}
+  totalChapters={8}
+  next={{ title: "Kapitel 2: Architektur verstehen", href: "/courses/llm-gateway-fundamentals/2" }}
+>
+
+  <h2>Was ist ein LLM Gateway?</h2>
+
+  <p>
+    Ein LLM Gateway ist ein zentraler Proxy-Service, der zwischen deinen Anwendungen und den
+    Large Language Model APIs sitzt. Statt dass jede Anwendung direkt mit OpenAI, Anthropic oder
+    anderen Anbietern kommuniziert, läuft der gesamte LLM-Traffic durch das Gateway.
+  </p>
+
+  <p>
+    Das klingt zunächst wie eine unnötige Komplexitätsschicht — aber mit wachsenden Teams und
+    steigendem LLM-Einsatz wird ein Gateway schnell unverzichtbar.
+  </p>
+
+  <h2>Was ein Gateway für dich erledigt</h2>
+
+  <ul>
+    <li><strong>Kostenkontrolle:</strong> Zentrales Token-Tracking und Budget-Limits pro Team oder Projekt</li>
+    <li><strong>API Key Management:</strong> Ein Gateway-Key statt dutzende Anbieter-Keys in verschiedenen Services</li>
+    <li><strong>Routing:</strong> Automatische Auswahl des optimalen Modells je nach Anfrage</li>
+    <li><strong>Observability:</strong> Vollständiges Logging aller LLM-Calls an einem Ort</li>
+    <li><strong>Rate Limiting:</strong> Schutz vor ungewollten Kosten-Explosionen</li>
+    <li><strong>Failover:</strong> Automatischer Wechsel auf Backup-Provider bei Ausfällen</li>
+  </ul>
+
+  <h2>Wann brauchst du ein Gateway?</h2>
+
+  <p>Ein LLM Gateway lohnt sich, sobald eines der folgenden Szenarien zutrifft:</p>
+
+  <ul>
+    <li>Mehrere Teams oder Services nutzen LLMs — und du möchtest Kosten pro Team sehen</li>
+    <li>Du arbeitest mit mehreren LLM-Anbietern und willst nicht in jedem Service einzeln konfigurieren</li>
+    <li>Compliance erfordert Logging aller KI-Interaktionen</li>
+    <li>Du möchtest Routing-Strategien einsetzen, ohne Code in allen Services zu ändern</li>
+    <li>Du hast Kunden oder externe Partner, die LLM-Zugang brauchen (Multi-Tenant)</li>
+  </ul>
+
+  <h2>Model Prism — unser self-hosted Gateway</h2>
+
+  <p>
+    In diesem Kurs bauen wir zusammen auf Basis von <strong>Model Prism</strong>, dem self-hosted LLM Gateway
+    von ohara.systems. Model Prism ist:
+  </p>
+
+  <ul>
+    <li>OpenAI-API-kompatibel (Drop-in, kein Code-Umbau nötig)</li>
+    <li>Self-hosted mit Docker oder Kubernetes</li>
+    <li>ELv2-lizenziert (source-available)</li>
+    <li>Production-ready mit Multi-Tenancy, RBAC und Cost-Tracking</li>
+  </ul>
+
+  <h2>Kursstruktur</h2>
+
+  <p>Dieser Kurs besteht aus 8 Kapiteln:</p>
+
+  <ol>
+    <li><strong>Einführung</strong> (dieses Kapitel) — Was ist ein Gateway, wann brauchst du es?</li>
+    <li><strong>Architektur verstehen</strong> — Wie Model Prism intern funktioniert</li>
+    <li><strong>Installation & Setup</strong> — Docker Compose, Erstkonfiguration</li>
+    <li><strong>Erste Anfragen</strong> — Das Gateway mit einem echten LLM-Call testen</li>
+    <li><strong>Tenants & API Keys</strong> — Mehrere Teams isolieren</li>
+    <li><strong>Routing konfigurieren</strong> — Regeln und Auto-Routing einrichten</li>
+    <li><strong>Kosten im Blick</strong> — Cost Tracking aktivieren und verstehen</li>
+    <li><strong>In die Produktion</strong> — Deployment-Strategien und Monitoring</li>
+  </ol>
+
+  <p>Los geht's — klicke auf "Weiter" für Kapitel 2.</p>
+
+</CoursePage>
