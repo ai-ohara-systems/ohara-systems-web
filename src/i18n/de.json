@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "products": "Produkte",
+    "blog": "Blog",
+    "courses": "Kurse",
+    "bestPractices": "Best Practices",
+    "docs": "Docs"
+  },
+  "hero": {
+    "eyebrow": "Model Prism v1.0 Beta ist jetzt verfügbar",
+    "headline": "KI-Infrastruktur die funktioniert.",
+    "subline": "Smarte Modell-Routing, Multi-Tenant Gateways und praxisnahe Ressourcen für AI-Teams.",
+    "ctaPrimary": "Model Prism entdecken",
+    "ctaSecondary": "Kostenlose Kurse"
+  },
+  "products": {
+    "title": "Unsere Produkte",
+    "subtitle": "Werkzeuge, die AI-Teams produktiver und kosteneffizienter machen.",
+    "learnMore": "Mehr erfahren"
+  },
+  "blog": {
+    "title": "KI Insights",
+    "subtitle": "Aktuelles aus der Praxis — LLMOps, Routing, Kostenoptimierung und mehr.",
+    "allArticles": "Alle Artikel",
+    "readMore": "Weiterlesen"
+  },
+  "courses": {
+    "title": "Kostenlose Kurse",
+    "subtitle": "Strukturiertes Wissen für AI-Teams — von den Grundlagen bis zur Produktionsreife.",
+    "free": "100% kostenlos — kein Account nötig",
+    "allCourses": "Alle Kurse",
+    "startCourse": "Kurs starten",
+    "comingSoon": "Demnächst"
+  },
+  "cta": {
+    "title": "Bereit loszulegen?",
+    "subtitle": "Model Prism ist self-hosted, source-available und sofort einsatzbereit.",
+    "github": "Model Prism auf GitHub",
+    "docs": "Dokumentation lesen"
+  },
+  "footer": {
+    "tagline": "KI-Infrastruktur die funktioniert.",
+    "navigation": "Navigation",
+    "products": "Produkte",
+    "copyright": "© 2026 ohara.systems",
+    "credit": "Idea & Architecture by weisser-dev — Built with Claude",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  }
+}

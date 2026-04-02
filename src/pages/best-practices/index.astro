@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const articles = [
+  {
+    slug: 'richtiges-llm-auswaehlen',
+    title: 'Das richtige LLM für den Job auswählen',
+    description: 'Ein Framework für Modellentscheidungen: Wann GPT-4o, wann Claude Sonnet, wann ein kleines lokales Modell? Entscheidungsbaum und Kriterien für jede Situation.',
+    tags: ['routing', 'cost'],
+    readTime: '15 min',
+    date: '2026-03-25',
+  },
+  {
+    slug: 'kontext-fenster-management',
+    title: 'Kontext-Fenster Management — was jeder Engineer wissen sollte',
+    description: 'Context Windows sind endlich und teuer. Wie du Kontext effizient verwaltest, was Chunking und RAG wirklich bringen und warum naives "einfach alles reingeben" keine Strategie ist.',
+    tags: ['tutorial', 'cost'],
+    readTime: '12 min',
+    date: '2026-03-15',
+  },
+  {
+    slug: 'multi-tenant-security-checklist',
+    title: 'Sichere Multi-Tenant LLM Deployments — Checkliste',
+    description: 'Eine umfassende Checkliste für alle, die LLM-Infrastruktur für mehrere Teams oder Kunden betreiben. Von API Key Management bis Audit Logging.',
+    tags: ['enterprise', 'open-source'],
+    readTime: '10 min',
+    date: '2026-03-05',
+  },
+  {
+    slug: 'routing-genauigkeit-bewerten',
+    title: 'Routing-Genauigkeit bewerten — wie du deinen Classifier benchmarkst',
+    description: 'Wie misst du, ob dein LLM-Router gute Entscheidungen trifft? Metriken, Testdatensätze und Evaluierungsmethoden für produktionsreife Routing-Systeme.',
+    tags: ['llmops', 'routing'],
+    readTime: '14 min',
+    date: '2026-02-28',
+  },
+];
+
+const tagColorMap: Record<string, string> = {
+  routing: '#38bdf8',
+  cost: '#818cf8',
+  enterprise: '#e879f9',
+  llmops: '#38bdf8',
+  tutorial: '#38bdf8',
+  'open-source': '#818cf8',
+};
+---
+
+<Base
+  title="Best Practices — ohara.systems"
+  description="Langformatige, evergreen technische Guides zu LLM-Infrastruktur, Routing, Security und Enterprise AI."
+  lang="de"
+>
+
+  <!-- Header -->
+  <section class="px-6 py-20 md:py-28 border-b border-white/5">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-4 text-xs font-medium text-[#818cf8] uppercase tracking-widest">Best Practices</div>
+      <h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">
+        Technische Guides
+      </h1>
+      <p class="text-white/50 text-lg max-w-xl">
+        Langformatige, evergreen Guides — nicht zeitgestempelt wie Blog Posts,
+        sondern dauerhaft relevante Referenz-Artikel.
+      </p>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {articles.map((article) => (
+          <article class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {article.tags.map((tag) => (
+                <span
+                  class="rounded-full px-2.5 py-0.5 text-xs font-medium border"
+                  style={`color: ${tagColorMap[tag] || '#38bdf8'}; background-color: ${tagColorMap[tag] || '#38bdf8'}15; border-color: ${tagColorMap[tag] || '#38bdf8'}30`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h2 class="text-lg font-semibold text-white mb-3 leading-snug flex-1">
+              <a href={`/best-practices/${article.slug}`} class="hover:text-[#38bdf8] transition-colors">
+                {article.title}
+              </a>
+            </h2>
+            <p class="text-sm text-white/50 leading-relaxed mb-5">
+              {article.description}
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-white/30">{article.readTime} Lesezeit</span>
+              <a
+                href={`/best-practices/${article.slug}`}
+                class="text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors inline-flex items-center gap-1"
+              >
+                Lesen
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,170 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const courses = [
+  {
+    slug: 'llm-gateway-fundamentals',
+    title: 'LLM Gateway Fundamentals',
+    description: 'Was ein LLM Gateway macht, wann du einen brauchst und wie du Model Prism Schritt für Schritt aufbaust. Ideal für alle, die neu in der Thematik sind.',
+    duration: 'ca. 3 Stunden',
+    lessons: 8,
+    level: 'Einsteiger',
+    levelColor: '#38bdf8',
+    icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+    accentColor: '#38bdf8',
+    topics: ['Gateway-Architektur', 'Docker Setup', 'API Keys & Tenants', 'Erste Requests', 'Monitoring'],
+  },
+  {
+    slug: 'prompt-routing',
+    title: 'Prompt Routing in der Praxis',
+    description: 'Signal-Extraktion, Classifier-Modelle, Kostentiers und Regelsets — alles was du brauchst, um intelligentes Routing in Produktion zu bringen.',
+    duration: 'ca. 4 Stunden',
+    lessons: 10,
+    level: 'Fortgeschritten',
+    levelColor: '#818cf8',
+    icon: 'M22 12h-4l-3 9L9 3l-3 9H2',
+    accentColor: '#818cf8',
+    topics: ['Routing-Strategien', 'Classifier-Modelle', 'Regelsets', 'A/B Testing', 'Fallbacks'],
+  },
+  {
+    slug: 'ki-kosten-optimieren',
+    title: 'KI Kosten optimieren',
+    description: 'Token Economics, Modelltiers, Routing-Strategien und Baseline-Vergleiche — wie du deine LLM-Kosten systematisch um bis zu 70 % reduzierst.',
+    duration: 'ca. 2,5 Stunden',
+    lessons: 7,
+    level: 'Alle Levels',
+    levelColor: '#e879f9',
+    icon: 'M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6',
+    accentColor: '#e879f9',
+    topics: ['Token Economics', 'Modell-Tiers', 'Caching', 'Batching', 'Cost Dashboards'],
+  },
+  {
+    slug: 'enterprise-ai',
+    title: 'AI im Enterprise betreiben',
+    description: 'Multi-Tenancy, RBAC, Audit Trails, LDAP-Integration und Compliance — AI-Infrastruktur für Teams und Organisationen mit hohen Anforderungen.',
+    duration: 'ca. 5 Stunden',
+    lessons: 12,
+    level: 'Fortgeschritten',
+    levelColor: '#818cf8',
+    icon: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75',
+    accentColor: '#818cf8',
+    topics: ['RBAC', 'SSO/LDAP', 'Audit Logs', 'Rate Limiting', 'Compliance'],
+    comingSoon: true,
+  },
+  {
+    slug: 'agentic-systeme',
+    title: 'Agentic Systems 101',
+    description: 'Tool Use, Kontextmanagement und Multi-Turn Conversations — Grundlagen für alle, die ihre erste produktionsreife Agentic Pipeline bauen wollen.',
+    duration: 'ca. 3,5 Stunden',
+    lessons: 9,
+    level: 'Einsteiger',
+    levelColor: '#38bdf8',
+    icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2',
+    accentColor: '#38bdf8',
+    topics: ['Tool Use', 'Function Calling', 'Context Management', 'Memory', 'Orchestration'],
+    comingSoon: true,
+  },
+];
+---
+
+<Base
+  title="Kostenlose Kurse — ohara.systems"
+  description="Strukturierte, kostenlose Kurse zu LLM Gateways, Prompt Routing, Kostenoptimierung und Enterprise AI. Kein Account nötig."
+  lang="de"
+>
+
+  <!-- Header -->
+  <section class="px-6 py-20 md:py-28 border-b border-white/5">
+    <div class="mx-auto max-w-5xl text-center">
+      <div class="mb-4 inline-flex items-center gap-2 text-xs font-medium text-[#38bdf8]">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        100% kostenlos — kein Account nötig
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">
+        Kostenlose Kurse
+      </h1>
+      <p class="text-white/50 text-lg max-w-2xl mx-auto">
+        Strukturiertes Wissen für AI-Teams — von den Grundlagen bis zur Produktionsreife.
+        Kapitel für Kapitel, mit Code-Beispielen und praxisnahen Aufgaben.
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses grid -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {courses.map((course) => (
+          <div class={`rounded-xl border bg-[#111118] p-6 flex flex-col transition-all duration-300 ${course.comingSoon ? 'border-white/5 opacity-60' : 'border-white/10 hover:border-white/20'}`}>
+            <div class="flex items-start justify-between mb-4">
+              <div
+                class="h-10 w-10 rounded-lg flex items-center justify-center"
+                style={`background-color: ${course.accentColor}15; border: 1px solid ${course.accentColor}25`}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={course.accentColor} stroke-width="1.5">
+                  <path d={course.icon}/>
+                </svg>
+              </div>
+              {course.comingSoon ? (
+                <span class="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs text-white/30">
+                  Demnächst
+                </span>
+              ) : (
+                <span
+                  class="rounded-full px-2.5 py-0.5 text-xs font-medium border"
+                  style={`color: ${course.levelColor}; background-color: ${course.levelColor}10; border-color: ${course.levelColor}25`}
+                >
+                  {course.level}
+                </span>
+              )}
+            </div>
+
+            <h2 class="text-lg font-semibold text-white mb-2">{course.title}</h2>
+            <p class="text-sm text-white/50 leading-relaxed flex-1 mb-4">{course.description}</p>
+
+            <!-- Topics -->
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              {course.topics.map((topic) => (
+                <span class="rounded-md bg-white/5 px-2 py-0.5 text-xs text-white/40">
+                  {topic}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4 text-xs text-white/30">
+                <span class="flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                  </svg>
+                  {course.duration}
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  </svg>
+                  {course.lessons} Lektionen
+                </span>
+              </div>
+              {!course.comingSoon && (
+                <a
+                  href={`/courses/${course.slug}`}
+                  class="text-sm font-medium flex items-center gap-1 transition-colors"
+                  style={`color: ${course.accentColor}`}
+                >
+                  Kurs starten
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>

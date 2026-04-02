@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-label="Prompt Flux">
+  <defs>
+    <linearGradient id="pf-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#e879f9"/>
+      <stop offset="50%"  stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="pf-out1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pf-out2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#818cf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pf-out3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#e879f9" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#e879f9" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pf-glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Input beam (left, raw prompt) -->
+  <line x1="2" y1="24" x2="14" y2="24"
+    stroke="white" stroke-width="1.5" opacity="0.55"/>
+
+  <!-- Flux lens (transform core) — rounded rect -->
+  <rect x="14" y="17" width="14" height="14" rx="4"
+    fill="rgba(232,121,249,0.06)"
+    stroke="url(#pf-grad)"
+    stroke-width="1.5"
+  />
+
+  <!-- Internal flux lines (motion inside lens) -->
+  <path d="M17,24 C19,20 23,28 25,24"
+    stroke="url(#pf-grad)" stroke-width="1" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Dispersed output beams -->
+  <line x1="28" y1="19" x2="46" y2="13"
+    stroke="url(#pf-out1)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="28" y1="24" x2="46" y2="24"
+    stroke="url(#pf-out2)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="28" y1="29" x2="46" y2="35"
+    stroke="url(#pf-out3)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Center highlight node -->
+  <circle cx="21" cy="24" r="2.5" fill="#e879f9" opacity="0.8" filter="url(#pf-glow)"/>
+  <circle cx="21" cy="24" r="1.2" fill="white" opacity="0.95"/>
+</svg>

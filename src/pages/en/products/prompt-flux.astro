@@ -1,0 +1,195 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SpaceAstronaut from '../../../components/SpaceAstronaut.astro';
+import SpaceMoon from '../../../components/SpaceMoon.astro';
+---
+
+<Base
+  title="Prompt Flux — Prompt Optimization Middleware | ohara.systems"
+  description="Prompt Flux is intelligent API middleware that automatically improves prompts before they reach any LLM, with configurable guardrails via self-hosted models."
+  lang="en"
+  canonicalPath="/en/products/prompt-flux"
+  alternatePath="/products/prompt-flux"
+>
+
+  <style>
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50%       { transform: translateY(-18px) rotate(3deg); }
+    }
+    @keyframes heroPulse {
+      0%, 100% { opacity: 0.05; }
+      50%       { opacity: 0.12; }
+    }
+    .hero-astronaut-float { animation: heroFloat 7s ease-in-out infinite; transform-origin: center; }
+    .hero-glow-pulse { animation: heroPulse 4s ease-in-out infinite; }
+  </style>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden px-6 py-28 md:py-36">
+    <!-- Pulsing background glow in brand color -->
+    <div class="pointer-events-none absolute inset-0">
+      <div class="hero-glow-pulse absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full blur-3xl" style="background: rgba(232, 121, 249, 0.08);"></div>
+    </div>
+
+    <!-- Floating astronaut + orbiting moon -->
+    <div class="hero-astronaut-float pointer-events-none absolute top-1/2 right-[5%] -translate-y-1/2 opacity-25 hidden lg:block" aria-hidden="true">
+      <div style="position:absolute;top:40px;left:80px;">
+        <SpaceMoon size={60} orbitRadius={120} orbitDuration={35} />
+      </div>
+      <SpaceAstronaut width={180} height={198} />
+    </div>
+
+    <div class="relative mx-auto max-w-5xl">
+      <div class="flex flex-col items-center text-center gap-8">
+        <div class="h-24 w-24 rounded-3xl bg-gradient-to-br from-[#e879f9]/20 via-[#818cf8]/15 to-[#38bdf8]/10 border border-[#e879f9]/20 flex items-center justify-center">
+          <img src="/prompt-flux-logo.svg" alt="Prompt Flux Logo" width="56" height="56" class="h-14 w-14"/>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-3 py-1 text-xs font-medium text-amber-400">Coming soon</span>
+          <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/50">ohara AI Factory</span>
+          <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/50">API Middleware</span>
+        </div>
+
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight text-white mb-4 md:text-6xl">Prompt Flux</h1>
+          <p class="text-xl text-white/60 max-w-2xl leading-relaxed">
+            „Shape better prompts."
+          </p>
+          <p class="mt-4 text-white/45 max-w-2xl leading-relaxed">
+            An intelligent middleware layer between your application and any LLM —
+            automatically improves prompts before they reach the model and enforces
+            configurable guardrails.
+          </p>
+        </div>
+
+        <a
+          href="https://github.com/ohara-systems"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl bg-white/8 border border-white/15 px-6 py-3 text-sm font-medium text-white hover:bg-white/12 transition-all duration-200"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Follow on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="px-6 py-20 border-t border-white/5">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center mb-16">
+        <h2 class="text-2xl font-bold text-white mb-4">How it works</h2>
+        <p class="text-white/50 max-w-2xl mx-auto leading-relaxed">
+          Prompt Flux sits transparently between your app and the LLM — no code changes required in your application.
+        </p>
+      </div>
+
+      <!-- Flow diagram -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-16">
+        <div class="rounded-xl border border-white/10 bg-[#111118] px-5 py-4 text-center min-w-[120px]">
+          <div class="text-xs text-white/40 mb-1">Your app</div>
+          <div class="text-sm font-medium text-white">Raw prompt</div>
+        </div>
+        <svg class="hidden md:block text-[#e879f9]/40" width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h32M26 6l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="md:hidden text-[#e879f9]/40 rotate-90" width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h32M26 6l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="rounded-xl border border-[#e879f9]/30 bg-[#e879f9]/5 px-5 py-4 text-center min-w-[160px]">
+          <div class="text-xs text-[#e879f9]/60 mb-1">Prompt Flux</div>
+          <div class="text-sm font-medium text-white">Optimized + Guardrails</div>
+        </div>
+        <svg class="hidden md:block text-[#38bdf8]/40" width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h32M26 6l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="md:hidden text-[#38bdf8]/40 rotate-90" width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h32M26 6l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="rounded-xl border border-white/10 bg-[#111118] px-5 py-4 text-center min-w-[120px]">
+          <div class="text-xs text-white/40 mb-1">Any LLM</div>
+          <div class="text-sm font-medium text-white">Better output</div>
+        </div>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-[#e879f9]/15 bg-[#111118] p-6">
+          <div class="h-10 w-10 rounded-xl bg-[#e879f9]/10 border border-[#e879f9]/20 flex items-center justify-center mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white mb-2">Automatic Prompt Optimization</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Prompt Flux analyzes and improves prompts in real-time — model-specifically adapted,
+            without any manual tuning. More consistent results, less token waste.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[#e879f9]/15 bg-[#111118] p-6">
+          <div class="h-10 w-10 rounded-xl bg-[#e879f9]/10 border border-[#e879f9]/20 flex items-center justify-center mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white mb-2">Configurable Guardrails</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Define rules for content filtering, safety, and compliance — executed by
+            self-hosted LLMs in your own infrastructure. Full control, zero vendor dependency.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[#e879f9]/15 bg-[#111118] p-6">
+          <div class="h-10 w-10 rounded-xl bg-[#e879f9]/10 border border-[#e879f9]/20 flex items-center justify-center mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white mb-2">OpenAI-compatible API</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Drop-in middleware: just swap your base URL — no code changes in your application.
+            Controllable via API parameters per request.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[#e879f9]/15 bg-[#111118] p-6">
+          <div class="h-10 w-10 rounded-xl bg-[#e879f9]/10 border border-[#e879f9]/20 flex items-center justify-center mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white mb-2">Multi-Model Support</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Optimizes prompts for the specific model in use — GPT, Claude, Mistral, Llama, and more.
+            Combinable with Model Prism for complete LLM management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="px-6 py-20 border-t border-white/5">
+    <div class="mx-auto max-w-2xl text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-amber-500/8 border border-amber-500/15 px-4 py-1.5 text-xs text-amber-400 mb-6">
+        <span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        In development
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-4">Stay in the loop</h2>
+      <p class="text-white/50 mb-8">
+        Prompt Flux is part of the ohara AI Factory. Follow us on GitHub for early access and updates.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://github.com/ohara-systems"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl bg-white/8 border border-white/15 px-6 py-3 text-sm font-medium text-white hover:bg-white/12 transition-all duration-200"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Follow on GitHub
+        </a>
+        <a href="/en/products/model-prism" class="text-sm text-[#38bdf8]/60 hover:text-[#38bdf8] transition-colors">
+          View Model Prism →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>

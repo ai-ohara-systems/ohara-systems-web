@@ -1,0 +1,93 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const articles = [
+  {
+    slug: 'choosing-the-right-llm',
+    title: 'Choosing the Right LLM for the Job',
+    description: 'A framework for model decisions: When GPT-4o, when Claude Sonnet, when a small local model? Decision tree and criteria for every situation.',
+    tags: ['routing', 'cost'],
+    readTime: '15 min',
+    date: '2026-03-25',
+  },
+  {
+    slug: 'context-window-management',
+    title: 'Context Window Management — What Every Engineer Should Know',
+    description: 'Context windows are finite and expensive. How to manage context efficiently, what chunking and RAG actually deliver and why "just put everything in" is not a strategy.',
+    tags: ['tutorial', 'cost'],
+    readTime: '12 min',
+    date: '2026-03-15',
+  },
+  {
+    slug: 'secure-multi-tenant-deployments',
+    title: 'Secure Multi-Tenant LLM Deployments — Checklist',
+    description: 'A comprehensive checklist for those operating LLM infrastructure for multiple teams or customers. From API key management to audit logging.',
+    tags: ['enterprise', 'open-source'],
+    readTime: '10 min',
+    date: '2026-03-05',
+  },
+  {
+    slug: 'evaluating-routing-accuracy',
+    title: 'Evaluating Routing Accuracy — How to Benchmark Your Classifier',
+    description: 'How do you measure whether your LLM router is making good decisions? Metrics, test datasets and evaluation methods for production-ready routing systems.',
+    tags: ['llmops', 'routing'],
+    readTime: '14 min',
+    date: '2026-02-28',
+  },
+];
+
+const tagColorMap: Record<string, string> = {
+  routing: '#38bdf8',
+  cost: '#818cf8',
+  enterprise: '#e879f9',
+  llmops: '#38bdf8',
+  tutorial: '#38bdf8',
+  'open-source': '#818cf8',
+};
+---
+
+<Base
+  title="Best Practices — ohara.systems"
+  description="Long-form, evergreen technical guides on LLM infrastructure, routing, security and enterprise AI."
+  lang="en"
+>
+  <section class="px-6 py-20 md:py-28 border-b border-white/5">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-4 text-xs font-medium text-[#818cf8] uppercase tracking-widest">Best Practices</div>
+      <h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">Technical Guides</h1>
+      <p class="text-white/50 text-lg max-w-xl">
+        Long-form, evergreen guides — not time-stamped like blog posts, but permanently
+        relevant reference articles.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {articles.map((article) => (
+          <article class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {article.tags.map((tag) => (
+                <span class="rounded-full px-2.5 py-0.5 text-xs font-medium border" style={`color: ${tagColorMap[tag] || '#38bdf8'}; background-color: ${tagColorMap[tag] || '#38bdf8'}15; border-color: ${tagColorMap[tag] || '#38bdf8'}30`}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h2 class="text-lg font-semibold text-white mb-3 leading-snug flex-1">
+              <a href={`/en/best-practices/${article.slug}`} class="hover:text-[#38bdf8] transition-colors">{article.title}</a>
+            </h2>
+            <p class="text-sm text-white/50 leading-relaxed mb-5">{article.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-white/30">{article.readTime} read</span>
+              <a href={`/en/best-practices/${article.slug}`} class="text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors inline-flex items-center gap-1">
+                Read
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
