@@ -1,0 +1,93 @@
+---
+interface Props {
+  size?: number;
+}
+const { size = 320 } = Astro.props;
+---
+
+<div class="css-moon" style={`width:${size}px;height:${size}px`}></div>
+
+<style>
+  .css-moon {
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    /* Adapted from CodePen pbutcher/ZYzPdBM — branding: #38bdf8 cyan tint */
+    background-image:
+      radial-gradient(circle at 60% 60%, transparent 50%, rgba(255,255,255,0.5) 120%),
+      radial-gradient(circle at 40% 40%, transparent 50%, rgba(0,0,0,1) 110%),
+      radial-gradient(circle at top left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%),
+      radial-gradient(circle at bottom, rgba(10,10,20,0.5) 30%, transparent 70%),
+      radial-gradient(circle at bottom, rgba(20,20,40,0.2) 0%, rgba(10,10,20,0.3) 100%),
+      radial-gradient(circle at top left, rgba(56,189,248,0.22) 0%, rgba(0,0,0,0.5) 90%),
+      linear-gradient(to left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 100%);
+    background-size: 180%, 100%, 100%, 100%, 100%, 100%, 100%;
+    background-position: 50%, 50%, 50%, 50%, 50%, 50%, 50%;
+  }
+
+  /* Cyan atmospheric glow ring */
+  .css-moon::after {
+    display: block;
+    content: '';
+    background-image:
+      radial-gradient(circle at 48% 48%, rgba(56,189,248,0.16) 22%, rgba(56,189,248,0.06) 32%, transparent 50%);
+    z-index: -1;
+    width: 240%;
+    height: 240%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50%;
+    animation: moonGlow 4s ease-in-out infinite;
+  }
+
+  /* Crater texture overlay */
+  .css-moon::before {
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.18;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 42%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 42%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 44%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.25) 44%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 44%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.1) 44%, rgba(0,0,0,0.25) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.6) 44%, rgba(0,0,0,0.6) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.6) 44%, rgba(0,0,0,0.6) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.5) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.5) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.4) 47%, rgba(0,0,0,0.5) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.4) 47%, rgba(0,0,0,0.5) 50%, transparent 0%),
+      radial-gradient(rgba(0,0,0,0.4) 47%, rgba(0,0,0,0.5) 50%, transparent 0%);
+    background-size:
+      16% 16%, 16% 16%, 16% 16%, 20% 20%, 20% 20%, 25% 25%, 25% 25%,
+      40% 40%, 40% 40%, 45% 45%, 45% 45%, 50% 50%, 50% 50%,
+      50% 50%, 50% 50%, 60% 60%, 60% 60%, 75% 75%, 75% 75%;
+    background-position:
+      50% 25%, 25% 50%, 20% 5%, -5% 25%, 25% -5%, 45% 3%, 3% 55%,
+      15% 20%, 22% 14%, -25% -15%, 105% 28%, 105% -32%, 52% 130%,
+      110% 42%, 82% 80%, 133% 110%, -40% 116%, 103% 86%, 116% -36%;
+    background-repeat:
+      repeat-y, repeat-x, repeat, repeat, repeat, repeat, repeat,
+      repeat, repeat, repeat, no-repeat, no-repeat, no-repeat,
+      no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  }
+
+  @keyframes moonGlow {
+    0%   { transform: translate(-50%, -50%) scale(1);   }
+    50%  { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1);   }
+  }
+</style>

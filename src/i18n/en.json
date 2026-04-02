@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "products": "Products",
+    "blog": "Blog",
+    "courses": "Courses",
+    "bestPractices": "Best Practices",
+    "docs": "Docs"
+  },
+  "hero": {
+    "eyebrow": "Model Prism {version} is now available",
+    "headline": "AI infrastructure that works.",
+    "subline": "Smart model routing, multi-tenant gateways and practical resources for AI teams.",
+    "ctaPrimary": "Explore Model Prism",
+    "ctaSecondary": "Free Courses"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Tools that make AI teams more productive and cost-efficient.",
+    "learnMore": "Learn more"
+  },
+  "blog": {
+    "title": "AI Insights",
+    "subtitle": "Practical knowledge from the field — LLMOps, routing, cost optimization and more.",
+    "allArticles": "All articles",
+    "readMore": "Read more"
+  },
+  "courses": {
+    "title": "Free Courses",
+    "subtitle": "Structured knowledge for AI teams — from fundamentals to production readiness.",
+    "free": "100% free — no account needed",
+    "allCourses": "All courses",
+    "startCourse": "Start course",
+    "comingSoon": "Coming soon"
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Model Prism is source-available, self-hosted and ready to deploy.",
+    "github": "Model Prism on GitHub",
+    "docs": "Read the docs"
+  },
+  "footer": {
+    "tagline": "AI infrastructure that works.",
+    "navigation": "Navigation",
+    "products": "Products",
+    "copyright": "© 2026 ohara.systems",
+    "credit": "Idea & Architecture by weisser-dev — Built with Claude",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  }
+}

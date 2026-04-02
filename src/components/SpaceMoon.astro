@@ -1,0 +1,50 @@
+---
+interface Props {
+  /** Moon body diameter in px */
+  size?: number;
+  /** Orbit radius in px */
+  orbitRadius?: number;
+  /** Full orbit duration in seconds */
+  orbitDuration?: number;
+}
+
+const { size = 60, orbitRadius = 120, orbitDuration = 35 } = Astro.props;
+const half = size / 2;
+---
+
+<div class="space-moon-anchor" style={`--moon-orbit-r:${orbitRadius}px;--moon-orbit-dur:${orbitDuration}s;`}>
+  <div class="space-moon-orbiter">
+    <div class="space-moon-surface" style={`
+      position:absolute;
+      width:${size}px; height:${size}px;
+      margin:-${half}px;
+      border-radius:50%;
+      background: radial-gradient(circle at 35% 32%, #2a2a3a 0%, #16161f 55%, #0c0c14 100%);
+      box-shadow:
+        0 0 0 1px rgba(56,189,248,0.18),
+        0 0 ${Math.round(size * 0.5)}px rgba(56,189,248,0.10),
+        inset -${Math.round(size * 0.08)}px -${Math.round(size * 0.07)}px ${Math.round(size * 0.2)}px rgba(56,189,248,0.10);
+    `}>
+      <!-- Craters -->
+      <div style={`position:absolute;width:${Math.round(size*0.2)}px;height:${Math.round(size*0.2)}px;border-radius:50%;background:#0a0a14;opacity:0.7;top:20%;left:16%`}></div>
+      <div style={`position:absolute;width:${Math.round(size*0.13)}px;height:${Math.round(size*0.13)}px;border-radius:50%;background:#0a0a14;opacity:0.55;top:52%;left:58%`}></div>
+      <div style={`position:absolute;width:${Math.round(size*0.08)}px;height:${Math.round(size*0.08)}px;border-radius:50%;background:#0a0a14;opacity:0.5;top:65%;left:30%`}></div>
+      <!-- Night-side shadow -->
+      <div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(110deg,transparent 38%,rgba(10,10,15,0.6) 100%)"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes spaceMoonOrbit {
+    from { transform: rotate(-30deg) translateX(var(--moon-orbit-r)); }
+    to   { transform: rotate(330deg) translateX(var(--moon-orbit-r)); }
+  }
+  @keyframes spaceMoonSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .space-moon-anchor  { position: relative; width: 0; height: 0; }
+  .space-moon-orbiter { animation: spaceMoonOrbit var(--moon-orbit-dur) linear infinite; position: absolute; width: 0; height: 0; }
+  .space-moon-surface { animation: spaceMoonSpin 90s linear infinite; }
+</style>

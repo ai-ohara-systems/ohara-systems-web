@@ -1,0 +1,304 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SpaceAstronaut from '../../../components/SpaceAstronaut.astro';
+import SpaceMoon from '../../../components/SpaceMoon.astro';
+import { getModelPrismVersion } from '../../../lib/versions';
+
+const prismVersion = await getModelPrismVersion();
+---
+
+<style>
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0px) rotate(-3deg); }
+    50%       { transform: translateY(-18px) rotate(3deg); }
+  }
+  @keyframes heroPulse {
+    0%, 100% { opacity: 0.05; }
+    50%       { opacity: 0.13; }
+  }
+  .hero-astronaut-float { animation: heroFloat 7s ease-in-out infinite; transform-origin: center; }
+  .hero-glow-pulse { animation: heroPulse 4s ease-in-out infinite; }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.15; }
+    50%       { opacity: 0.9; }
+  }
+  .star { animation: twinkle var(--dur,3s) ease-in-out infinite; animation-delay: var(--del,0s); }
+</style>
+
+<Base
+  title="Model Prism — Multi-Tenant LLM Gateway | ohara.systems"
+  description="Model Prism is a self-hosted LLM gateway with intelligent routing, multi-tenant isolation and cost tracking. OpenAI-compatible. ELv2 licensed."
+  lang="en"
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden px-6 py-28 md:py-36">
+    <!-- Pulsing background glow in brand color -->
+    <div class="pointer-events-none absolute inset-0">
+      <div class="hero-glow-pulse absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full bg-[#38bdf8] blur-3xl"></div>
+      <div class="absolute top-20 right-1/4 h-[200px] w-[300px] rounded-full bg-[#818cf8]/5 blur-3xl"></div>
+    </div>
+
+    <!-- Stars -->
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="star absolute rounded-full bg-white" style="--dur:2.1s;--del:0s; width:2px;height:2px;top:8%; left:6%"></div>
+      <div class="star absolute rounded-full bg-white" style="--dur:3.4s;--del:0.8s; width:1px;height:1px;top:15%; left:20%"></div>
+      <div class="star absolute rounded-full bg-white" style="--dur:2.8s;--del:0.3s; width:2px;height:2px;top:6%; left:50%"></div>
+      <div class="star absolute rounded-full bg-white" style="--dur:4s;--del:1.2s; width:3px;height:3px;top:4%; left:74%"></div>
+      <div class="star absolute rounded-full bg-white" style="--dur:2.5s;--del:0.5s; width:1px;height:1px;top:20%; left:88%"></div>
+      <div class="star absolute rounded-full bg-white" style="--dur:3.1s;--del:1.8s; width:2px;height:2px;top:70%; left:4%"></div>
+    </div>
+
+    <!-- Floating astronaut + orbiting moon (right side) -->
+    <div class="hero-astronaut-float pointer-events-none absolute top-1/2 right-[5%] -translate-y-1/2 opacity-25 hidden lg:block" aria-hidden="true">
+      <div style="position:absolute;top:40px;left:80px;">
+        <SpaceMoon size={60} orbitRadius={120} orbitDuration={35} />
+      </div>
+      <SpaceAstronaut width={180} height={198} />
+    </div>
+
+    <div class="relative mx-auto max-w-5xl">
+      <div class="flex flex-col items-center text-center gap-8">
+        <div class="h-24 w-24 rounded-3xl bg-gradient-to-br from-[#38bdf8]/20 via-[#818cf8]/20 to-[#e879f9]/20 border border-[#38bdf8]/20 flex items-center justify-center">
+          <img src="/model-prism-logo.svg" alt="Model Prism Logo" width="56" height="56" class="h-14 w-14" />
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <span class="rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 px-3 py-1 text-xs font-medium text-[#38bdf8]">Source Available</span>
+          <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/50">Self-hosted</span>
+          <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/50">OpenAI-compatible</span>
+          <span class="rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 px-3 py-1 text-xs font-medium text-[#38bdf8]">{prismVersion}</span>
+          <a
+            href="/en/products/prism-enterprise"
+            class="rounded-full bg-violet-500/10 border border-violet-500/25 px-3 py-1 text-xs font-medium text-violet-400 hover:bg-violet-500/15 transition-colors duration-200"
+          >
+            Enterprise ✦
+          </a>
+        </div>
+
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight text-white mb-4 md:text-6xl">Model Prism</h1>
+          <p class="text-xl text-white/60 max-w-2xl leading-relaxed">
+            Multi-tenant LLM gateway with intelligent routing and cost control.
+            Drop-in replacement for the OpenAI API &mdash; for your entire organization.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a
+            href="https://demo-prism.ohara.systems"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200 inline-flex items-center gap-2"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+            Live Demo
+          </a>
+          <a
+            href="https://github.com/ai-ohara-systems/model-prism"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200 inline-flex items-center gap-2"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            View on GitHub
+          </a>
+          <a
+            href="https://docs.ohara.systems/prism"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200 inline-flex items-center gap-2"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY FEATURES ===== -->
+  <section class="px-6 py-24 border-t border-white/5">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">Everything you need</h2>
+        <p class="mt-4 text-white/50 max-w-xl mx-auto">
+          Model Prism bundles all critical features of a production-ready LLM gateway
+          into a single, easily deployable service.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#38bdf8]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#38bdf8]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Intelligent Auto-Routing</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Classifier-based routing directs every request to the optimal model &mdash;
+            based on complexity, context and configured cost tiers. Rule sets and fallbacks for maximum control.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#818cf8]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#818cf8]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Multi-Tenant &amp; RBAC</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Complete tenant isolation: every team and customer gets their own API keys,
+            quotas and permissions. RBAC at tenant and model level, LDAP/SSO integration.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#e879f9]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#e879f9]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Real-Time Cost Control</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Token-accurate cost tracking per tenant, model and time period. Budget alerts,
+            automatic throttling on overage and detailed analytics dashboards.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#38bdf8]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#38bdf8]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">OpenAI-Compatible API</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Drop-in replacement for the OpenAI API &mdash; no code changes required. Supports
+            Chat Completions, Embeddings and Function Calling. Compatible with every OpenAI SDK.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#818cf8]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#818cf8]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Prompt Logging &amp; Audit Trail</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Complete audit log of all LLM requests &mdash; prompt, response, model, tokens,
+            cost and timestamp. Exportable for compliance and debugging.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-[#e879f9]/30 transition-all duration-300">
+          <div class="mb-4 h-10 w-10 rounded-lg bg-[#e879f9]/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5">
+              <rect x="2" y="3" width="6" height="18"/><rect x="9" y="8" width="6" height="13"/><rect x="16" y="13" width="6" height="8"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Horizontal Scaling</h3>
+          <p class="text-sm text-white/50 leading-relaxed">
+            Stateless architecture for easy horizontal scaling. Kubernetes-ready,
+            health checks, graceful shutdown. From single node to enterprise cluster.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK START ===== -->
+  <section class="px-6 py-24 border-t border-white/5">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">Up and running in 5 minutes</h2>
+        <p class="mt-4 text-white/50">Start Model Prism instantly with Docker Compose. No database setup, no complex configuration.</p>
+      </div>
+
+      <div class="rounded-xl border border-white/10 bg-[#111118] overflow-hidden">
+        <div class="flex border-b border-white/10 bg-[#0a0a0f]">
+          <button class="px-4 py-3 text-sm text-[#38bdf8] border-b-2 border-[#38bdf8] font-medium">Docker Compose</button>
+          <button class="px-4 py-3 text-sm text-white/40 hover:text-white/60 transition-colors">Docker Run</button>
+          <button class="px-4 py-3 text-sm text-white/40 hover:text-white/60 transition-colors">Kubernetes</button>
+        </div>
+
+        <div class="p-6 overflow-x-auto">
+          <pre class="text-sm leading-relaxed font-mono text-white/80"><code><span class="text-white/30"># 1. Download docker-compose.yml</span>
+<span class="text-[#38bdf8]">curl</span> -O https://raw.githubusercontent.com/ai-ohara-systems/model-prism/main/docker-compose.yml
+
+<span class="text-white/30"># 2. Configure API keys</span>
+<span class="text-[#38bdf8]">cat</span> &gt; .env <span class="text-[#e879f9]">&lt;&lt;EOF
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+PRISM_ADMIN_KEY=your-secure-admin-key
+EOF</span>
+
+<span class="text-white/30"># 3. Start</span>
+<span class="text-[#38bdf8]">docker compose up</span> -d
+
+<span class="text-white/30"># 4. Test — drop-in for OpenAI API</span>
+<span class="text-[#38bdf8]">curl</span> http://localhost:8080/v1/chat/completions \
+  -H <span class="text-[#e879f9]">"Authorization: Bearer your-tenant-key"</span> \
+  -H <span class="text-[#e879f9]">"Content-Type: application/json"</span> \
+  -d <span class="text-[#e879f9]">'&#123;
+    "model": "auto",
+    "messages": [&#123;"role": "user", "content": "Hello, Model Prism!"&#125;]
+  &#125;'</span></code></pre>
+        </div>
+
+        <div class="border-t border-white/10 p-6 bg-[#0a0a0f]/50">
+          <p class="text-xs text-white/30 mb-3 font-mono uppercase tracking-wider">Response</p>
+          <pre class="text-sm font-mono text-white/60 leading-relaxed overflow-x-auto"><code><span class="text-[#38bdf8]">&#123;</span>
+  <span class="text-[#818cf8]">"id"</span>: <span class="text-[#e879f9]">"chatcmpl-prism-7f3a2b1"</span>,
+  <span class="text-[#818cf8]">"model"</span>: <span class="text-[#e879f9]">"gpt-4o-mini"</span>, <span class="text-white/30">// routed automatically</span>
+  <span class="text-[#818cf8]">"choices"</span>: [&#123; <span class="text-[#818cf8]">"message"</span>: &#123; <span class="text-[#818cf8]">"content"</span>: <span class="text-[#e879f9]">"Hello! ..."</span> &#125; &#125;],
+  <span class="text-[#818cf8]">"usage"</span>: &#123; <span class="text-[#818cf8]">"total_tokens"</span>: 24, <span class="text-[#818cf8]">"cost_usd"</span>: <span class="text-[#e879f9]">0.000014</span> &#125;
+<span class="text-[#38bdf8]">&#125;</span></code></pre>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://docs.ohara.systems/prism/getting-started"
+          class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200 inline-flex items-center gap-2"
+        >
+          Full setup guide
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a
+          href="https://github.com/ai-ohara-systems/model-prism"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200 inline-flex items-center gap-2"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Providers -->
+  <section class="px-6 py-24 border-t border-white/5">
+    <div class="mx-auto max-w-5xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight text-white mb-4">Supported Providers</h2>
+      <p class="text-white/50 mb-12">Model Prism connects to all major LLM providers through unified adapters.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        {['OpenAI', 'Anthropic', 'Google', 'Mistral', 'Cohere', 'Ollama'].map((provider) => (
+          <div class="rounded-lg border border-white/10 bg-[#111118] p-4 flex items-center justify-center hover:border-white/20 transition-colors">
+            <span class="text-sm text-white/60">{provider}</span>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-xs text-white/30">+ any OpenAI-compatible endpoint (vLLM, LM Studio, LocalAI, ...)</p>
+    </div>
+  </section>
+
+</Base>

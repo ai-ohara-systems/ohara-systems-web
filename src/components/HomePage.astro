@@ -1,0 +1,606 @@
+---
+import SpaceAstronaut from './SpaceAstronaut.astro';
+import SpaceMoon from './SpaceMoon.astro';
+import { getModelPrismVersion } from '../lib/versions';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const isDE = lang === 'de';
+const prefix = isDE ? '' : '/en';
+const prismVersion = await getModelPrismVersion();
+
+const t = {
+  title: isDE ? 'ohara.systems — KI-Infrastruktur die funktioniert' : 'ohara.systems — AI Infrastructure That Works',
+  description: isDE ? 'Smarte Modell-Routing, Multi-Tenant Gateways und praxisnahe Ressourcen für AI-Teams.' : 'Smart model routing, multi-tenant gateways and practical resources for AI teams.',
+  eyebrow: isDE ? `Model Prism ${prismVersion} ist jetzt verfügbar` : `Model Prism ${prismVersion} is now available`,
+  heroTitle1: isDE ? 'KI-Infrastruktur' : 'AI Infrastructure',
+  heroTitle2: isDE ? 'die funktioniert.' : 'that works.',
+  heroQuote: '"The sky isn\'t the limit — we can already reach the moon."',
+  heroSub: isDE ? 'ohara.systems — Enterprise-ready AI solutions. Für alle.' : 'ohara.systems — Enterprise-ready AI solutions. For everyone.',
+  ctaProducts: isDE ? 'Produkte entdecken' : 'Explore Products',
+  ctaCourses: isDE ? 'Kostenlose Kurse' : 'Free Courses',
+  statOpenSource: 'Source Available',
+  statOpenSourceSub: isDE ? 'ELv2-Lizenz' : 'ELv2 License',
+  statSelfHosted: 'Self-hosted',
+  statSelfHostedSub: isDE ? 'Volle Datenkontrolle' : 'Full data control',
+  statApi: 'OpenAI-API',
+  statApiSub: isDE ? 'Drop-in kompatibel' : 'Drop-in compatible',
+  // Products section
+  productsLabel: 'ohara AI Factory',
+  productsTitle: isDE ? 'Unsere Produkte' : 'Our Products',
+  productsSub: isDE ? 'Vier Werkzeuge. Eine Vision: AI-Teams produktiver, sicherer und kosteneffizienter machen.' : 'Four tools. One vision: make AI teams more productive, safer, and cost-efficient.',
+  prismDesc: isDE ? 'Multi-tenant LLM Gateway mit intelligentem Routing und Kostenkontrolle — OpenAI-kompatibel.' : 'Multi-tenant LLM gateway with intelligent routing and cost tracking — OpenAI-compatible.',
+  prismCta: isDE ? 'Mehr erfahren' : 'Learn more',
+  atlasDesc: isDE ? 'Eine kuratierte Bibliothek modularer, produktionsreifer AI-Agents — wiederverwendbar, komponierbar, integrierbar.' : 'A curated library of modular, production-ready AI agents — reusable, composable, and easy to integrate.',
+  forgeDesc: isDE ? 'Ein Framework zum Aufbau, Anpassung und Deployment von AI-Agents — von der Idee zum produktionsreifen System.' : 'A framework for building, customizing, and deploying AI agents — from idea to production-ready system.',
+  fluxDesc: isDE ? 'Eine Prompt-Optimierungs-Engine als API-Middleware — verbessert Prompts automatisch und integriert konfigurierbare Guardrails.' : 'A prompt optimization engine as API middleware — automatically improves prompts and enforces configurable guardrails.',
+  conceptCta: isDE ? 'Konzept ansehen' : 'View concept',
+  // Blog section
+  newsTitle: isDE ? 'Neuigkeiten' : 'Latest News',
+  newsSub: isDE ? 'Aktuelles aus der Praxis — LLMOps, Routing, Kostenoptimierung und mehr.' : 'Practical knowledge from the field — LLMOps, routing, cost optimization and more.',
+  newsAll: isDE ? 'Alle Artikel' : 'All articles',
+  newsRead: isDE ? 'Weiterlesen' : 'Read more',
+  // Blog articles (with links)
+  art1Title: isDE ? 'LLM Routing in der Praxis — wie man Modelle automatisch wählt' : 'LLM Routing in Practice — How to Select Models Automatically',
+  art1Desc: isDE ? 'Classifier-basiertes Routing, regelbasierte Fallbacks und hybride Ansätze: Wie du mit Model Prism das richtige Modell für jede Anfrage auswählst und dabei Kosten und Qualität im Gleichgewicht hältst.' : 'Classifier-based routing, rule-based fallbacks and hybrid approaches: How to use Model Prism to select the right model for every request while balancing cost and quality.',
+  art1Link: isDE ? '/blog/llm-routing-in-der-praxis' : '/en/blog/llm-routing-in-practice',
+  art2Title: isDE ? 'Token Economics — Kosten verstehen und optimieren' : 'Token Economics — Understanding and Optimizing Costs',
+  art2Desc: isDE ? 'Input-Tokens, Output-Tokens, Caching und Batching: Ein tiefer Blick in die Preismodelle der großen LLM-Anbieter und wie du mit den richtigen Strategien bis zu 70 % Kosten einsparen kannst.' : 'Input tokens, output tokens, caching and batching: A deep dive into the pricing models of major LLM providers and how to save up to 70% in costs with the right strategies.',
+  art2Link: isDE ? '/blog/token-economics' : '/en/blog/token-economics',
+  art3Title: isDE ? 'Multi-Tenant LLM Gateways — Security und Isolation' : 'Multi-Tenant LLM Gateways — Security and Isolation',
+  art3Desc: isDE ? 'Wie du einen LLM Gateway so aufbaust, dass verschiedene Teams und Kunden sicher und isoliert auf gemeinsame Modell-Infrastruktur zugreifen können — mit RBAC, Audit Logs und Rate Limits.' : 'How to build an LLM gateway so that different teams and customers can securely and in isolation access shared model infrastructure — with RBAC, audit logs and rate limits.',
+  art3Link: isDE ? '/blog/multi-tenant-llm-gateways' : '/en/blog/multi-tenant-llm-gateways',
+  // Courses section
+  coursesFreeLabel: isDE ? '100% kostenlos — kein Account nötig' : '100% free — no account needed',
+  coursesTitle: isDE ? 'Kostenlose Kurse' : 'Free Courses',
+  coursesSub: isDE ? 'Strukturiertes Wissen für AI-Teams — von den Grundlagen bis zur Produktionsreife.' : 'Structured knowledge for AI teams — from fundamentals to production readiness.',
+  coursesAll: isDE ? 'Alle Kurse' : 'All courses',
+  courseStart: isDE ? 'Kurs starten' : 'Start course',
+  course1Desc: isDE ? 'Was ein LLM Gateway macht, wann du einen brauchst und wie du Model Prism Schritt für Schritt aufbaust. Ideal für alle, die neu in der Thematik sind.' : 'What an LLM gateway does, when you need one, and how to set up Model Prism step by step. Perfect for those new to the topic.',
+  course1Time: isDE ? 'ca. 3 Stunden' : 'approx. 3 hours',
+  course1Link: isDE ? '/courses/llm-gateway-fundamentals' : '/en/courses/llm-gateway-fundamentals',
+  course2Title: isDE ? 'Prompt Routing in der Praxis' : 'Prompt Routing in Practice',
+  course2Desc: isDE ? 'Signal-Extraktion, Classifier-Modelle, Kostentiers und Regelsets — alles was du brauchst, um intelligentes Routing in Produktion zu bringen.' : 'Signal extraction, classifier models, cost tiers and rule sets — everything you need to bring intelligent routing into production.',
+  course2Time: isDE ? 'ca. 4 Stunden' : 'approx. 4 hours',
+  course2Link: isDE ? '/courses/prompt-routing' : '/en/courses/prompt-routing',
+  course3Title: isDE ? 'KI Kosten optimieren' : 'AI Cost Optimization',
+  course3Desc: isDE ? 'Token Economics, Modelltiers, Routing-Strategien und Baseline-Vergleiche — wie du deine LLM-Kosten systematisch um bis zu 70 % reduzierst.' : 'Token economics, model tiers, routing strategies and baseline comparisons — how to systematically reduce your LLM costs by up to 70%.',
+  course3Time: isDE ? 'ca. 2,5 Stunden' : 'approx. 2.5 hours',
+  course3Link: isDE ? '/courses/ki-kosten-optimieren' : '/en/courses/ai-cost-optimization',
+  // CTA section
+  ctaTitle: isDE ? 'Bereit loszulegen?' : 'Ready to get started?',
+  ctaDesc: isDE ? 'Model Prism ist self-hosted, source-available und sofort einsatzbereit. Deploy in unter 5 Minuten — mit Docker Compose oder Kubernetes.' : 'Model Prism is self-hosted, source-available and ready to deploy. Up and running in under 5 minutes — with Docker Compose or Kubernetes.',
+  ctaGithub: isDE ? 'Model Prism auf GitHub' : 'Model Prism on GitHub',
+  ctaDocs: isDE ? 'Dokumentation lesen' : 'Read the docs',
+};
+---
+
+<style>
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50%       { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(-3deg); }
+    50%       { transform: translateY(-18px) rotate(3deg); }
+  }
+  .star            { animation: twinkle var(--dur,3s) ease-in-out infinite; animation-delay: var(--del,0s); }
+  .astronaut-float { animation: float 7s ease-in-out infinite; transform-origin: center; }
+</style>
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden px-6 py-32 md:py-40">
+  <!-- Background glow effects -->
+  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+    <div class="h-[600px] w-[800px] rounded-full bg-[#38bdf8]/5 blur-3xl"></div>
+  </div>
+  <div class="pointer-events-none absolute top-20 left-1/4 h-[300px] w-[300px] rounded-full bg-[#818cf8]/5 blur-3xl"></div>
+  <div class="pointer-events-none absolute bottom-20 right-1/4 h-[300px] w-[300px] rounded-full bg-[#e879f9]/5 blur-3xl"></div>
+
+  <!-- Stars (background decoration) -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="star absolute rounded-full bg-white" style="--dur:2.1s;--del:0s; width:2px;height:2px;top:7%; left:5%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:3.4s;--del:0.8s; width:1px;height:1px;top:14%; left:22%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:2.8s;--del:0.3s; width:2px;height:2px;top:5%; left:48%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:4s;--del:1.2s; width:3px;height:3px;top:3%; left:72%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:2.5s;--del:0.5s; width:1px;height:1px;top:18%; left:85%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:3.1s;--del:1.8s; width:2px;height:2px;top:28%; left:95%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:2.2s;--del:0.9s; width:1px;height:1px;top:70%; left:3%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:3.7s;--del:2.1s; width:2px;height:2px;top:82%; left:88%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:2.9s;--del:0.4s; width:1px;height:1px;top:60%; left:12%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:3.3s;--del:1.5s; width:2px;height:2px;top:75%; left:60%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:4.2s;--del:0.7s; width:1px;height:1px;top:45%; left:92%"></div>
+    <div class="star absolute rounded-full bg-white" style="--dur:2.6s;--del:2.4s; width:2px;height:2px;top:55%; left:78%"></div>
+  </div>
+
+  <!-- Floating astronaut + orbiting moon (right side, decorative) -->
+  <div class="astronaut-float pointer-events-none absolute top-1/2 right-[5%] -translate-y-1/2 opacity-30 hidden lg:block" aria-hidden="true">
+    <div style="position:absolute;top:40px;left:80px;">
+      <SpaceMoon size={60} orbitRadius={120} orbitDuration={35} />
+    </div>
+    <SpaceAstronaut width={180} height={198} />
+  </div>
+
+  <!-- Centered text content (foreground) -->
+  <div class="relative z-10 mx-auto max-w-4xl text-center">
+    <!-- Eyebrow -->
+    <div class="mb-6 inline-flex flex-wrap items-center justify-center gap-2">
+      <a
+        href={`${prefix}/products/model-prism`}
+        class="inline-flex items-center gap-2 rounded-full border border-[#38bdf8]/20 bg-[#38bdf8]/5 px-4 py-1.5 text-xs font-medium text-[#38bdf8] hover:bg-[#38bdf8]/10 transition-colors duration-200"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-[#38bdf8] animate-pulse"></span>
+        {t.eyebrow}
+      </a>
+      <a
+        href="https://demo-prism.ohara.systems"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 rounded-full border border-[#e879f9]/25 bg-[#e879f9]/8 px-4 py-1.5 text-xs font-medium text-[#e879f9] hover:bg-[#e879f9]/12 transition-colors duration-200"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+        </svg>
+        Live Demo
+      </a>
+    </div>
+
+    <h1 class="mb-6 text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
+      {t.heroTitle1}<br />
+      <span class="bg-gradient-to-r from-[#38bdf8] via-[#818cf8] to-[#e879f9] bg-clip-text text-transparent">
+        {t.heroTitle2}
+      </span>
+    </h1>
+
+    <p class="mb-3 mx-auto max-w-2xl text-base italic text-white/40 leading-relaxed">
+      {t.heroQuote}
+    </p>
+
+    <p class="mb-10 mx-auto max-w-2xl text-lg text-white/60 leading-relaxed">
+      {t.heroSub}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={`${prefix}/products`}
+        class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200 w-full sm:w-auto text-center"
+      >
+        {t.ctaProducts}
+      </a>
+      <a
+        href={`${prefix}/courses`}
+        class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200 w-full sm:w-auto text-center"
+      >
+        {t.ctaCourses}
+      </a>
+    </div>
+
+    <!-- Stats row -->
+    <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-12 text-center">
+      <div>
+        <div class="text-3xl font-bold text-white">{t.statOpenSource}</div>
+        <div class="text-sm text-white/40 mt-1">{t.statOpenSourceSub}</div>
+      </div>
+      <div class="hidden sm:block h-12 w-px bg-white/10"></div>
+      <div>
+        <div class="text-3xl font-bold text-white">{t.statSelfHosted}</div>
+        <div class="text-sm text-white/40 mt-1">{t.statSelfHostedSub}</div>
+      </div>
+      <div class="hidden sm:block h-12 w-px bg-white/10"></div>
+      <div>
+        <div class="text-3xl font-bold text-white">{t.statApi}</div>
+        <div class="text-sm text-white/40 mt-1">{t.statApiSub}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS SECTION ===== -->
+<section class="px-6 py-24">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-16 text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#38bdf8]/60">
+        {t.productsLabel}
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">
+        {t.productsTitle}
+      </h2>
+      <p class="mt-4 text-white/50">
+        {t.productsSub}
+      </p>
+    </div>
+
+    <!-- 2x2 Product grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+      <!-- Model Prism (GA) -->
+      <a href={`${prefix}/products/model-prism`} class="group block rounded-2xl border border-white/10 bg-[#111118] p-7
+        hover:border-[#38bdf8]/35 hover:bg-[#111118]/80 hover:shadow-[0_0_40px_-12px_rgba(56,189,248,0.25)]
+        transition-all duration-300">
+        <div class="flex items-start gap-5">
+          <div class="shrink-0 h-14 w-14 rounded-xl bg-gradient-to-br from-[#38bdf8]/20 to-[#818cf8]/20
+            border border-[#38bdf8]/20 flex items-center justify-center
+            group-hover:border-[#38bdf8]/40 transition-colors duration-300">
+            <img src="/model-prism-logo.svg" alt="Model Prism" width="32" height="32" class="h-8 w-8"/>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white">Model Prism</h3>
+              <span class="rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 px-2.5 py-0.5 text-[11px] font-medium text-[#38bdf8]">GA</span>
+            </div>
+            <p class="text-sm text-white/55 leading-relaxed mb-4">
+              {t.prismDesc}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 text-[11px] text-white/50">Source Available</span>
+              <span class="rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 text-[11px] text-white/50">Self-hosted</span>
+              <span class="rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 text-[11px] text-white/50">Auto-Routing</span>
+              <span class="rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 text-[11px] text-white/50">Cost Tracking</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[#38bdf8] text-sm font-medium
+              group-hover:gap-2.5 transition-all duration-200">
+              {t.prismCta}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Agent Atlas (coming soon) -->
+      <a href={`${prefix}/products/agent-atlas`} class="group block rounded-2xl border border-white/8 bg-[#111118]/70 p-7
+        hover:border-[#818cf8]/30 hover:bg-[#111118]/90 hover:shadow-[0_0_40px_-12px_rgba(129,140,248,0.2)]
+        transition-all duration-300">
+        <div class="flex items-start gap-5">
+          <div class="shrink-0 h-14 w-14 rounded-xl bg-gradient-to-br from-[#818cf8]/15 to-[#38bdf8]/15
+            border border-[#818cf8]/15 flex items-center justify-center
+            group-hover:border-[#818cf8]/30 transition-colors duration-300">
+            <img src="/agent-atlas-logo.svg" alt="Agent Atlas" width="32" height="32" class="h-8 w-8 opacity-75 group-hover:opacity-100 transition-opacity duration-300"/>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white/70 group-hover:text-white transition-colors duration-300">Agent Atlas</h3>
+              <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 text-[11px] font-medium text-amber-400">Coming soon</span>
+            </div>
+            <p class="text-sm text-white/40 leading-relaxed mb-4 group-hover:text-white/55 transition-colors duration-300">
+              {t.atlasDesc}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Modular</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Composable</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Production-ready</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[#818cf8]/60 text-sm font-medium
+              group-hover:text-[#818cf8] group-hover:gap-2.5 transition-all duration-200">
+              {t.conceptCta}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Agent Forge (coming soon) -->
+      <a href={`${prefix}/products/agent-forge`} class="group block rounded-2xl border border-white/8 bg-[#111118]/70 p-7
+        hover:border-[#e879f9]/25 hover:bg-[#111118]/90 hover:shadow-[0_0_40px_-12px_rgba(232,121,249,0.15)]
+        transition-all duration-300">
+        <div class="flex items-start gap-5">
+          <div class="shrink-0 h-14 w-14 rounded-xl bg-gradient-to-br from-[#f97316]/15 to-[#e879f9]/15
+            border border-[#e879f9]/15 flex items-center justify-center
+            group-hover:border-[#e879f9]/30 transition-colors duration-300">
+            <img src="/agent-forge-logo.svg" alt="Agent Forge" width="32" height="32" class="h-8 w-8 opacity-75 group-hover:opacity-100 transition-opacity duration-300"/>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white/70 group-hover:text-white transition-colors duration-300">Agent Forge</h3>
+              <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 text-[11px] font-medium text-amber-400">Coming soon</span>
+            </div>
+            <p class="text-sm text-white/40 leading-relaxed mb-4 group-hover:text-white/55 transition-colors duration-300">
+              {t.forgeDesc}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Framework</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Orchestration</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Self-hosted</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[#e879f9]/60 text-sm font-medium
+              group-hover:text-[#e879f9] group-hover:gap-2.5 transition-all duration-200">
+              {t.conceptCta}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Prompt Flux (coming soon) -->
+      <a href={`${prefix}/products/prompt-flux`} class="group block rounded-2xl border border-white/8 bg-[#111118]/70 p-7
+        hover:border-[#e879f9]/25 hover:bg-[#111118]/90 hover:shadow-[0_0_40px_-12px_rgba(232,121,249,0.15)]
+        transition-all duration-300">
+        <div class="flex items-start gap-5">
+          <div class="shrink-0 h-14 w-14 rounded-xl bg-gradient-to-br from-[#e879f9]/15 to-[#818cf8]/15
+            border border-[#e879f9]/15 flex items-center justify-center
+            group-hover:border-[#e879f9]/30 transition-colors duration-300">
+            <img src="/prompt-flux-logo.svg" alt="Prompt Flux" width="32" height="32" class="h-8 w-8 opacity-75 group-hover:opacity-100 transition-opacity duration-300"/>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white/70 group-hover:text-white transition-colors duration-300">Prompt Flux</h3>
+              <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 text-[11px] font-medium text-amber-400">Coming soon</span>
+            </div>
+            <p class="text-sm text-white/40 leading-relaxed mb-4 group-hover:text-white/55 transition-colors duration-300">
+              {t.fluxDesc}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">API Middleware</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Guardrails</span>
+              <span class="rounded-md bg-white/4 border border-white/8 px-2.5 py-0.5 text-[11px] text-white/35">Multi-Model</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[#e879f9]/60 text-sm font-medium
+              group-hover:text-[#e879f9] group-hover:gap-2.5 transition-all duration-200">
+              {t.conceptCta}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG TEASER ===== -->
+<section class="px-6 py-24 border-t border-white/5">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          {t.newsTitle}
+        </h2>
+        <p class="mt-3 text-white/50">
+          {t.newsSub}
+        </p>
+      </div>
+      <a
+        href={`${prefix}/blog`}
+        class="shrink-0 text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors duration-200 flex items-center gap-1"
+      >
+        {t.newsAll}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Article 1 -->
+      <article class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 px-2.5 py-0.5 text-xs font-medium text-[#38bdf8]">
+            llmops
+          </span>
+          <time class="text-xs text-white/30">2026-04-01</time>
+        </div>
+        <h3 class="text-lg font-semibold text-white leading-snug mb-3">
+          {t.art1Title}
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1">
+          {t.art1Desc}
+        </p>
+        <a href={t.art1Link} class="mt-5 text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors inline-flex items-center gap-1">
+          {t.newsRead}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="rounded-full bg-[#818cf8]/10 border border-[#818cf8]/20 px-2.5 py-0.5 text-xs font-medium text-[#818cf8]">
+            cost
+          </span>
+          <time class="text-xs text-white/30">2026-03-20</time>
+        </div>
+        <h3 class="text-lg font-semibold text-white leading-snug mb-3">
+          {t.art2Title}
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1">
+          {t.art2Desc}
+        </p>
+        <a href={t.art2Link} class="mt-5 text-sm text-[#818cf8] hover:text-[#a5b4fc] transition-colors inline-flex items-center gap-1">
+          {t.newsRead}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="rounded-full bg-[#e879f9]/10 border border-[#e879f9]/20 px-2.5 py-0.5 text-xs font-medium text-[#e879f9]">
+            enterprise
+          </span>
+          <time class="text-xs text-white/30">2026-03-10</time>
+        </div>
+        <h3 class="text-lg font-semibold text-white leading-snug mb-3">
+          {t.art3Title}
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1">
+          {t.art3Desc}
+        </p>
+        <a href={t.art3Link} class="mt-5 text-sm text-[#e879f9] hover:text-[#f0abfc] transition-colors inline-flex items-center gap-1">
+          {t.newsRead}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FREE COURSES TEASER ===== -->
+<section class="px-6 py-24 border-t border-white/5">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="mb-3 inline-flex items-center gap-2 text-xs font-medium text-[#38bdf8]">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          {t.coursesFreeLabel}
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">
+          {t.coursesTitle}
+        </h2>
+        <p class="mt-3 text-white/50">
+          {t.coursesSub}
+        </p>
+      </div>
+      <a
+        href={`${prefix}/courses`}
+        class="shrink-0 text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors duration-200 flex items-center gap-1"
+      >
+        {t.coursesAll}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Course 1 -->
+      <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col group">
+        <div class="mb-4 h-10 w-10 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/20 flex items-center justify-center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">
+          LLM Gateway Fundamentals
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1 mb-4">
+          {t.course1Desc}
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-white/30 flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+            {t.course1Time}
+          </span>
+          <a href={t.course1Link} class="text-sm text-[#38bdf8] hover:text-[#7dd3fc] transition-colors flex items-center gap-1">
+            {t.courseStart}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col group">
+        <div class="mb-4 h-10 w-10 rounded-lg bg-[#818cf8]/10 border border-[#818cf8]/20 flex items-center justify-center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">
+          {t.course2Title}
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1 mb-4">
+          {t.course2Desc}
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-white/30 flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+            {t.course2Time}
+          </span>
+          <a href={t.course2Link} class="text-sm text-[#818cf8] hover:text-[#a5b4fc] transition-colors flex items-center gap-1">
+            {t.courseStart}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="rounded-xl border border-white/10 bg-[#111118] p-6 hover:border-white/20 transition-all duration-300 flex flex-col group">
+        <div class="mb-4 h-10 w-10 rounded-lg bg-[#e879f9]/10 border border-[#e879f9]/20 flex items-center justify-center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="1.5">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">
+          {t.course3Title}
+        </h3>
+        <p class="text-sm text-white/50 leading-relaxed flex-1 mb-4">
+          {t.course3Desc}
+        </p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-white/30 flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+            {t.course3Time}
+          </span>
+          <a href={t.course3Link} class="text-sm text-[#e879f9] hover:text-[#f0abfc] transition-colors flex items-center gap-1">
+            {t.courseStart}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="px-6 py-24 border-t border-white/5">
+  <div class="mx-auto max-w-3xl text-center">
+    <div class="rounded-2xl border border-white/10 bg-[#111118] p-12 relative overflow-hidden">
+      <!-- Glow -->
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div class="h-[300px] w-[500px] rounded-full bg-[#38bdf8]/5 blur-3xl"></div>
+      </div>
+      <div class="relative">
+        <h2 class="text-3xl font-bold tracking-tight text-white mb-4">
+          {t.ctaTitle}
+        </h2>
+        <p class="text-white/50 mb-8 leading-relaxed">
+          {t.ctaDesc}
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://github.com/ai-ohara-systems/model-prism"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200 inline-flex items-center gap-2"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            {t.ctaGithub}
+          </a>
+          <a
+            href={`${prefix}/docs`}
+            class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200"
+          >
+            {t.ctaDocs}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

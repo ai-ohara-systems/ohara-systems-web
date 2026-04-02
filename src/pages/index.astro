@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import HomePage from '../components/HomePage.astro';
+---
+
+<script>
+  if (typeof navigator !== 'undefined' && !sessionStorage.getItem('lang-manual')) {
+    const lang = (navigator.language || navigator.languages?.[0] || '').slice(0, 2).toLowerCase();
+    if (lang === 'en') {
+      window.location.replace('/en/');
+    }
+  }
+</script>
+
+<Base
+  title="ohara.systems — KI-Infrastruktur die funktioniert"
+  description="Smarte Modell-Routing, Multi-Tenant Gateways und praxisnahe Ressourcen für AI-Teams. Model Prism — der OpenAI-kompatible LLM Gateway."
+  lang="de"
+>
+  <HomePage lang="de" />
+</Base>
