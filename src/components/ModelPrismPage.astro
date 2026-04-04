@@ -176,54 +176,50 @@ const { data, version, lang } = Astro.props;
       </p>
     </div>
 
-    <div class="rounded-xl border border-white/10 bg-[#111118] overflow-hidden">
+    <!-- Docker image reference -->
+    <div class="mb-6 flex items-center justify-center gap-2">
+      <code class="text-xs text-white/40 bg-white/5 border border-white/10 rounded px-3 py-1.5 font-mono">
+        docker pull {data.image}:{data.imageTag}
+      </code>
+    </div>
+
+    <div class="rounded-xl border border-white/10 bg-[#111118] overflow-hidden" id="quickstart-tabs">
       <!-- Tab bar -->
       <div class="flex border-b border-white/10 bg-[#0a0a0f]">
-        {data.quickStart.tabs.map((tab: string, i: number) => (
-          i === 0
-            ? <button class="px-4 py-3 text-sm text-[#38bdf8] border-b-2 border-[#38bdf8] font-medium">{tab}</button>
-            : <button class="px-4 py-3 text-sm text-white/40 hover:text-white/60 transition-colors">{tab}</button>
+        {data.quickStart.tabs.map((tab: any, i: number) => (
+          <button
+            class={`qs-tab px-4 py-3 text-sm transition-colors cursor-pointer ${i === 0 ? 'text-[#38bdf8] border-b-2 border-[#38bdf8] font-medium' : 'text-white/40 hover:text-white/60'}`}
+            data-tab={i}
+          >
+            {tab.label}
+          </button>
         ))}
       </div>
 
-      <!-- Code block -->
-      <div class="p-6 overflow-x-auto">
-        <pre class="text-sm leading-relaxed font-mono text-white/80"><code><span class="text-white/30">{data.quickStart.comments.clone}</span>
-<span class="text-[#38bdf8]">git clone</span> https://github.com/ai-ohara-systems/model-prism
-<span class="text-[#38bdf8]">cd</span> model-prism
-
-<span class="text-white/30">{data.quickStart.comments.secrets}</span>
-<span class="text-[#38bdf8]">cat</span> &gt; .env <span class="text-[#e879f9]">&lt;&lt;EOF
-JWT_SECRET=$(openssl rand -hex 32)
-ENCRYPTION_KEY=$(openssl rand -hex 16)
-EOF</span>
-
-<span class="text-white/30">{data.quickStart.comments.start}</span>
-<span class="text-[#38bdf8]">docker compose up</span> -d
-
-<span class="text-white/30">{data.quickStart.comments.wizard}</span>
-
-<span class="text-white/30">{data.quickStart.comments.test}</span>
-<span class="text-[#38bdf8]">curl</span> http://localhost:3000/api/api/v1/chat/completions \
-  -H <span class="text-[#e879f9]">"Authorization: Bearer omp-your-api-key"</span> \
-  -H <span class="text-[#e879f9]">"Content-Type: application/json"</span> \
-  -d <span class="text-[#e879f9]">'&#123;
-    "model": "auto",
-    "messages": [&#123;"role": "user", "content": "Hello, Model Prism!"&#125;]
-  &#125;'</span></code></pre>
-      </div>
-
-      <!-- Output -->
-      <div class="border-t border-white/10 p-6 bg-[#0a0a0f]/50">
-        <p class="text-xs text-white/30 mb-3 font-mono uppercase tracking-wider">Response</p>
-        <pre class="text-sm font-mono text-white/60 leading-relaxed overflow-x-auto"><code><span class="text-[#38bdf8]">&#123;</span>
-  <span class="text-[#818cf8]">"id"</span>: <span class="text-[#e879f9]">"chatcmpl-prism-7f3a2b1"</span>,
-  <span class="text-[#818cf8]">"model"</span>: <span class="text-[#e879f9]">"gpt-4o-mini"</span>, <span class="text-white/30">// routed automatically</span>
-  <span class="text-[#818cf8]">"choices"</span>: [&#123; <span class="text-[#818cf8]">"message"</span>: &#123; <span class="text-[#818cf8]">"content"</span>: <span class="text-[#e879f9]">"Hello! ..."</span> &#125; &#125;],
-  <span class="text-[#818cf8]">"usage"</span>: &#123; <span class="text-[#818cf8]">"total_tokens"</span>: 24, <span class="text-[#818cf8]">"cost_usd"</span>: <span class="text-[#e879f9]">0.000014</span> &#125;
-<span class="text-[#38bdf8]">&#125;</span></code></pre>
-      </div>
+      <!-- Code panels -->
+      {data.quickStart.tabs.map((tab: any, i: number) => (
+        <div class={`qs-panel p-6 overflow-x-auto ${i !== 0 ? 'hidden' : ''}`} data-panel={i}>
+          <pre class="text-sm leading-relaxed font-mono text-white/80"><code>{tab.code}</code></pre>
+        </div>
+      ))}
     </div>
+
+    <script>
+      document.querySelectorAll('.qs-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = btn.dataset.tab;
+          document.querySelectorAll('.qs-tab').forEach(t => {
+            t.classList.remove('text-[#38bdf8]', 'border-b-2', 'border-[#38bdf8]', 'font-medium');
+            t.classList.add('text-white/40');
+          });
+          btn.classList.add('text-[#38bdf8]', 'border-b-2', 'border-[#38bdf8]', 'font-medium');
+          btn.classList.remove('text-white/40');
+          document.querySelectorAll('.qs-panel').forEach(p => {
+            p.classList.toggle('hidden', p.dataset.panel !== idx);
+          });
+        });
+      });
+    </script>
 
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a

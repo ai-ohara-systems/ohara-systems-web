@@ -88,17 +88,25 @@
       }
     ]
   },
+  "image": "ghcr.io/ai-ohara-systems/model-prism",
+  "imageTag": "latest",
   "quickStart": {
     "title": "In 5 Minuten live",
     "subtitle": "Model Prism lässt sich mit Docker Compose sofort starten. Keine Datenbank-Setup, keine komplexe Konfiguration.",
-    "tabs": ["Docker Compose", "Docker Run", "Kubernetes"],
-    "comments": {
-      "clone": "# 1. Repository klonen",
-      "secrets": "# 2. Secrets konfigurieren",
-      "start": "# 3. Starten",
-      "wizard": "# → Setup-Wizard: http://localhost:3000",
-      "test": "# 4. Testen — drop-in für OpenAI API"
-    },
+    "tabs": [
+      {
+        "label": "Docker Compose",
+        "code": "# 1. Repository klonen\ngit clone https://github.com/ai-ohara-systems/model-prism\ncd model-prism\n\n# 2. Starten\ndocker compose up -d\n\n# → Setup-Wizard: http://localhost:3000\n\n# 3. Testen — drop-in für OpenAI API\ncurl http://localhost:3000/api/api/v1/chat/completions \\\n  -H \"Authorization: Bearer omp-your-api-key\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"auto\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]}'"
+      },
+      {
+        "label": "Docker Run",
+        "code": "# 1. MongoDB starten\ndocker run -d --name model-prism-mongo \\\n  -p 27017:27017 \\\n  -v model-prism-data:/data/db \\\n  mongo:7\n\n# 2. Model Prism starten\ndocker run -d --name model-prism \\\n  -p 3000:3000 \\\n  -e MONGO_URI=mongodb://host.docker.internal:27017/openmodelprism \\\n  -e JWT_SECRET=$(openssl rand -hex 32) \\\n  -e ENCRYPTION_KEY=$(openssl rand -hex 16) \\\n  ghcr.io/ai-ohara-systems/model-prism:latest\n\n# → Setup-Wizard: http://localhost:3000"
+      },
+      {
+        "label": "Kubernetes",
+        "code": "# 1. Helm Repo hinzufügen\nhelm repo add ohara https://ai-ohara-systems.github.io/ohara-helm\nhelm repo update\n\n# 2. Installieren\nhelm install model-prism ohara/model-prism \\\n  --namespace model-prism \\\n  --create-namespace\n\n# 3. Port-Forward zum Setup-Wizard\nkubectl port-forward svc/model-prism 3000:80 -n model-prism\n\n# → Setup-Wizard: http://localhost:3000"
+      }
+    ],
     "guideLabel": "Vollständige Anleitung",
     "guideUrl": "https://docs.ohara.systems/model-prism/getting-started"
   },
