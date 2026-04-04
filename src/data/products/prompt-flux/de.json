@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Prompt Flux — Prompt-Optimierungs-Middleware | ohara.systems",
+    "description": "Intelligente API-Middleware, die Prompts automatisch optimiert und konfigurierbare Guardrails via selbst-gehostete LLMs durchsetzt."
+  },
+  "slug": "prompt-flux",
+  "name": "Prompt Flux",
+  "logo": "/prompt-flux-logo.svg",
+  "status": "coming-soon",
+  "color": "#f97316",
+  "home": {
+    "description": "Eine Prompt-Optimierungs-Engine als API-Middleware — verbessert Prompts automatisch und integriert konfigurierbare Guardrails.",
+    "ctaLabel": "Konzept ansehen",
+    "tags": ["API Middleware", "Guardrails", "Multi-Model"]
+  },
+  "overview": {
+    "description": "Intelligente API-Middleware die Prompts automatisch verbessert und konfigurierbare Guardrails via selbst-gehostete LLMs durchsetzt."
+  },
+  "tagline": "Shape better prompts.",
+  "hero": {
+    "description": "Intelligente API-Middleware, die zwischen deiner App und dem LLM sitzt. Prompt Flux analysiert eingehende Prompts in Echtzeit, optimiert sie automatisch und erzwingt konfigurierbare Guardrails — alles über selbst-gehostete Modelle."
+  },
+  "badges": [
+    { "text": "Demnächst", "type": "warning" },
+    { "text": "ohara AI Factory", "type": "neutral" },
+    { "text": "API Middleware", "type": "neutral" }
+  ],
+  "flow": {
+    "title": "So funktioniert's",
+    "steps": ["Deine App", "Raw Prompt", "Prompt Flux", "Optimiert + Guardrails", "Jedes LLM", "Bessere Antwort"]
+  },
+  "features": [
+    {
+      "title": "Automatische Prompt-Optimierung",
+      "description": "Prompts werden in Echtzeit analysiert und verbessert — Kontext wird ergänzt, Mehrdeutigkeiten aufgelöst, Struktur optimiert.",
+      "icon": "sparkle",
+      "color": "#f97316"
+    },
+    {
+      "title": "Konfigurierbare Guardrails",
+      "description": "Content-Filter, Sicherheits- und Compliance-Regeln — durchgesetzt via selbst-gehostete LLMs. Keine externen Abhängigkeiten.",
+      "icon": "shield",
+      "color": "#e879f9"
+    },
+    {
+      "title": "OpenAI-kompatible API",
+      "description": "Drop-in Middleware: Einfach die Base-URL austauschen. Funktioniert sofort mit jedem OpenAI-kompatiblen Client.",
+      "icon": "code",
+      "color": "#38bdf8"
+    },
+    {
+      "title": "Multi-Model-Support",
+      "description": "GPT, Claude, Mistral, Llama und alle weiteren Modelle — Prompt Flux optimiert für jedes Backend.",
+      "icon": "layers",
+      "color": "#818cf8"
+    }
+  ],
+  "cta": {
+    "title": "Interesse geweckt?",
+    "githubLabel": "Folge uns auf GitHub",
+    "githubUrl": "https://github.com/ai-ohara-systems",
+    "altLabel": "Model Prism ansehen",
+    "altUrl": "/products/model-prism"
+  }
+}

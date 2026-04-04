@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Agent Forge — Framework für AI-Agents | ohara.systems",
+    "description": "Ein Framework zum Bauen, Anpassen und Deployen von AI-Agenten — mit voller Kontrolle über Verhalten, Tools und Orchestrierung."
+  },
+  "slug": "agent-forge",
+  "name": "Agent Forge",
+  "logo": "/agent-forge-logo.svg",
+  "status": "coming-soon",
+  "color": "#e879f9",
+  "home": {
+    "description": "Ein Framework zum Aufbau, Anpassung und Deployment von AI-Agents — von der Idee zum produktionsreifen System.",
+    "ctaLabel": "Konzept ansehen",
+    "tags": ["Framework", "Orchestration", "Self-hosted"]
+  },
+  "overview": {
+    "description": "Framework zum Bauen, Anpassen und Deployen von AI-Agenten mit voller Kontrolle über Verhalten und Orchestrierung."
+  },
+  "tagline": "Forge intelligent systems.",
+  "hero": {
+    "description": "Ein Framework zum Bauen, Anpassen und Deployen von AI-Agenten — mit voller Kontrolle über Verhalten, Tools und Orchestrierung. Von einzelnen Assistenten bis zu Multi-Agent-Pipelines."
+  },
+  "badges": [
+    { "text": "Demnächst", "type": "warning" },
+    { "text": "ohara AI Factory", "type": "neutral" },
+    { "text": "Agent Framework", "type": "neutral" }
+  ],
+  "concepts": [
+    {
+      "title": "Agent-Verhalten definieren",
+      "description": "Beschreibe, wie der Agent entscheidet, welche Tools er nutzt und wie er auf Kontext reagiert.",
+      "icon": "brain",
+      "color": "#e879f9"
+    },
+    {
+      "title": "Orchestrierung & Pipelines",
+      "description": "Agenten zu mehrstufigen Pipelines verbinden. Sequenziell, parallel oder event-basiert.",
+      "icon": "pipeline",
+      "color": "#f97316"
+    },
+    {
+      "title": "Self-hosted & Privat",
+      "description": "Kein Vendor-Lock-in, keine Cloud-Abhängigkeit. Volle Kontrolle über Daten, Modelle und Infrastruktur.",
+      "icon": "lock",
+      "color": "#22c55e"
+    }
+  ],
+  "cta": {
+    "title": "Bleib auf dem Laufenden",
+    "githubLabel": "Folge uns auf GitHub",
+    "githubUrl": "https://github.com/ai-ohara-systems",
+    "backLabel": "Alle Produkte",
+    "backUrl": "/"
+  }
+}

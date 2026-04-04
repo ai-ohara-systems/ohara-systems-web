@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Agent Atlas — Kuratierte AI-Agent-Bibliothek | ohara.systems",
+    "description": "Strukturierte Bibliothek produktionsreifer, modularer AI-Agenten — kuratiert, komponierbar, sofort einsetzbar."
+  },
+  "slug": "agent-atlas",
+  "name": "Agent Atlas",
+  "logo": "/agent-atlas-logo.svg",
+  "status": "coming-soon",
+  "color": "#818cf8",
+  "home": {
+    "description": "Eine kuratierte Bibliothek modularer, produktionsreifer AI-Agents — wiederverwendbar, komponierbar, integrierbar.",
+    "ctaLabel": "Konzept ansehen",
+    "tags": ["Modular", "Composable", "Production-ready"]
+  },
+  "overview": {
+    "description": "Kuratierte Bibliothek produktionsreifer AI-Agenten — modular, komponierbar, sofort einsetzbar."
+  },
+  "tagline": "A structured library of intelligence.",
+  "hero": {
+    "description": "Eine kuratierte Sammlung produktionsreifer AI-Agenten — modular, komponierbar, sofort einsetzbar. Agent Atlas ist das Verzeichnis, das Teams befähigt, schneller zu bauen, indem sie aus erprobten Bausteinen statt von Null beginnen."
+  },
+  "badges": [
+    { "text": "Demnächst", "type": "warning" },
+    { "text": "ohara AI Factory", "type": "neutral" },
+    { "text": "Agent Library", "type": "neutral" }
+  ],
+  "concepts": [
+    {
+      "title": "Strukturiert & Auffindbar",
+      "description": "Jeder Agent ist nach Kategorie, Fähigkeit und Einsatzgebiet organisiert. Schnell finden, was du brauchst.",
+      "icon": "search",
+      "color": "#38bdf8"
+    },
+    {
+      "title": "Modular & Komponierbar",
+      "description": "Einheitliches Interface, frei kombinierbar. Agenten lassen sich nahtlos in bestehende Workflows einbinden.",
+      "icon": "puzzle",
+      "color": "#818cf8"
+    },
+    {
+      "title": "Produktionsreif",
+      "description": "Getestet, dokumentiert und sofort deploybar. Jeder Agent kommt mit Konfiguration, Beispielen und Best Practices.",
+      "icon": "check",
+      "color": "#22c55e"
+    }
+  ],
+  "cta": {
+    "title": "Bleib auf dem Laufenden",
+    "githubLabel": "Folge uns auf GitHub",
+    "githubUrl": "https://github.com/ai-ohara-systems",
+    "backLabel": "Alle Produkte",
+    "backUrl": "/"
+  }
+}

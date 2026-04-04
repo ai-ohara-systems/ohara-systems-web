@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Model Prism — Multi-Tenant LLM Gateway | ohara.systems",
+    "description": "Multi-tenant LLM gateway with intelligent routing and cost control. Drop-in replacement for the OpenAI API — for your entire organization."
+  },
+  "slug": "model-prism",
+  "name": "Model Prism",
+  "logo": "/model-prism-logo.svg",
+  "status": "ga",
+  "color": "#38bdf8",
+  "badges": [
+    { "text": "Source Available", "type": "brand" },
+    { "text": "Self-hosted", "type": "neutral" },
+    { "text": "OpenAI-compatible", "type": "neutral" }
+  ],
+  "enterpriseLink": "/en/products/prism-enterprise",
+  "home": {
+    "description": "Multi-tenant LLM gateway with intelligent routing and cost tracking — OpenAI-compatible.",
+    "ctaLabel": "Learn more",
+    "tags": ["Source Available", "Self-hosted", "Auto-Routing", "Cost Tracking"]
+  },
+  "overview": {
+    "description": "The OpenAI-compatible LLM gateway for teams — with intelligent routing, multi-tenant isolation, and granular cost control. Self-hosted, deployed in minutes.",
+    "highlights": [
+      { "title": "Intelligent Routing", "description": "Automatic model selection by cost, latency, and task type.", "icon": "routing" },
+      { "title": "Multi-Tenant", "description": "Full isolation between teams, projects, and customers.", "icon": "users" },
+      { "title": "Cost Control", "description": "Budget limits, real-time tracking, and detailed usage logging.", "icon": "cost" },
+      { "title": "OpenAI-compatible", "description": "Drop-in: just swap the base URL — no code changes required.", "icon": "terminal" }
+    ],
+    "stats": [
+      { "value": "GPT · Claude", "label": "Mistral · Llama · more" },
+      { "value": "< 5 min", "label": "Docker Compose setup" },
+      { "value": "Kubernetes-ready", "label": "Helm Chart · Horizontal scaling" },
+      { "value": "Self-hosted", "label": "Full data control" }
+    ],
+    "enterpriseCta": {
+      "title": "Model Prism Enterprise",
+      "description": "LDAP/SSO, priority support, advanced features — dedicated enterprise license"
+    }
+  },
+  "hero": {
+    "description": "Multi-tenant LLM gateway with intelligent routing and cost control. Drop-in replacement for the OpenAI API — for your entire organization."
+  },
+  "ctas": {
+    "demo": { "label": "Live Demo", "url": "https://demo-prism.ohara.systems" },
+    "github": { "label": "View on GitHub", "url": "https://github.com/ai-ohara-systems/model-prism" },
+    "docs": { "label": "Documentation", "url": "https://docs.ohara.systems/model-prism" }
+  },
+  "features": {
+    "title": "Everything you need",
+    "subtitle": "Model Prism bundles all critical features of a production-ready LLM gateway into a single, easily deployable service.",
+    "items": [
+      {
+        "title": "Intelligent Auto-Routing",
+        "description": "Classifier-based routing automatically directs each request to the optimal model — based on complexity, context, and configured cost tiers. Rule sets and fallbacks for maximum control.",
+        "icon": "routing",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "Multi-Tenant & RBAC",
+        "description": "Full tenant isolation: Every team, every customer gets their own API keys, quotas, and permissions. RBAC at tenant and model level, LDAP/SSO integration.",
+        "icon": "users",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Real-Time Cost Control",
+        "description": "Token-accurate cost tracking per tenant, model, and time period. Budget alerts, automatic throttling on overage, and detailed analytics dashboards.",
+        "icon": "cost",
+        "color": "#e879f9"
+      },
+      {
+        "title": "OpenAI-Compatible API",
+        "description": "Drop-in replacement for the OpenAI API — no code changes required. Supports Chat Completions, Embeddings, and Function Calling. Compatible with every OpenAI SDK.",
+        "icon": "code",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "Prompt Logging & Audit Trail",
+        "description": "Complete audit log of all LLM requests — prompt, response, model, tokens, cost, and timestamp. Exportable for compliance and debugging.",
+        "icon": "log",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Horizontal Scaling",
+        "description": "Stateless architecture for easy horizontal scaling. Kubernetes-ready, health checks, graceful shutdown. From single-node to enterprise cluster.",
+        "icon": "scale",
+        "color": "#e879f9"
+      }
+    ]
+  },
+  "quickStart": {
+    "title": "Up and running in 5 minutes",
+    "subtitle": "Start Model Prism instantly with Docker Compose. No database setup, no complex configuration.",
+    "tabs": ["Docker Compose", "Docker Run", "Kubernetes"],
+    "comments": {
+      "clone": "# 1. Clone the repository",
+      "secrets": "# 2. Configure secrets",
+      "start": "# 3. Start",
+      "wizard": "# → Setup wizard: http://localhost:3000",
+      "test": "# 4. Test — drop-in for OpenAI API"
+    },
+    "guideLabel": "Full setup guide",
+    "guideUrl": "https://docs.ohara.systems/model-prism/getting-started"
+  },
+  "providers": {
+    "title": "Supported Providers",
+    "subtitle": "Model Prism connects to all major LLM providers through unified adapters.",
+    "list": ["OpenAI", "Anthropic", "Google", "Mistral", "Cohere", "Ollama"],
+    "extraNote": "+ any OpenAI-compatible endpoint (vLLM, LM Studio, LocalAI, ...)"
+  },
+  "bottomCta": {
+    "title": "Ready to deploy Model Prism?",
+    "description": "Source Available (ELv2), production-ready. Enterprise license available for advanced features. Community on GitHub — issues, discussions, and pull requests welcome.",
+    "label": "Model Prism on GitHub",
+    "url": "https://github.com/ai-ohara-systems/model-prism"
+  }
+}

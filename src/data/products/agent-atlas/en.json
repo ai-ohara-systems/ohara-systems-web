@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Agent Atlas — Curated AI Agent Library | ohara.systems",
+    "description": "Curated collection of production-ready, modular AI agents — organized, composable, and ready to deploy."
+  },
+  "slug": "agent-atlas",
+  "name": "Agent Atlas",
+  "logo": "/agent-atlas-logo.svg",
+  "status": "coming-soon",
+  "color": "#818cf8",
+  "home": {
+    "description": "A curated library of modular, production-ready AI agents — reusable, composable, and easy to integrate.",
+    "ctaLabel": "View concept",
+    "tags": ["Modular", "Composable", "Production-ready"]
+  },
+  "overview": {
+    "description": "Curated library of production-ready AI agents — modular, composable, and ready to deploy."
+  },
+  "tagline": "A structured library of intelligence.",
+  "hero": {
+    "description": "A curated collection of production-ready AI agents — modular, composable, and ready to deploy. Agent Atlas is the directory that empowers teams to build faster by starting from proven building blocks instead of from scratch."
+  },
+  "badges": [
+    { "text": "Coming soon", "type": "warning" },
+    { "text": "ohara AI Factory", "type": "neutral" },
+    { "text": "Agent Library", "type": "neutral" }
+  ],
+  "concepts": [
+    {
+      "title": "Structured & Discoverable",
+      "description": "Every agent is organized by category, capability, and use case. Quickly find what you need.",
+      "icon": "search",
+      "color": "#38bdf8"
+    },
+    {
+      "title": "Modular & Composable",
+      "description": "Unified interface, freely combinable. Agents integrate seamlessly into existing workflows.",
+      "icon": "puzzle",
+      "color": "#818cf8"
+    },
+    {
+      "title": "Production Ready",
+      "description": "Tested, documented, and ready to deploy. Every agent comes with configuration, examples, and best practices.",
+      "icon": "check",
+      "color": "#22c55e"
+    }
+  ],
+  "cta": {
+    "title": "Stay in the loop",
+    "githubLabel": "Follow us on GitHub",
+    "githubUrl": "https://github.com/ai-ohara-systems",
+    "backLabel": "All Products",
+    "backUrl": "/en/"
+  }
+}

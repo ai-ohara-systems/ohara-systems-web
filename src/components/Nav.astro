@@ -1,5 +1,6 @@
 ---
 import { getModelPrismVersion } from '../lib/versions';
+import { loadProductData } from '../lib/products';
 
 interface Props {
   lang?: string;
@@ -10,40 +11,31 @@ const { lang = 'de' } = Astro.props;
 const isDE = lang === 'de';
 const prismVersion = await getModelPrismVersion();
 
-const productsDE = [
-  { label: 'Model Prism', href: '/products/model-prism', badge: prismVersion, badgeColor: 'emerald' },
-  { label: 'Agent Atlas', href: '/products/agent-atlas', badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Agent Forge', href: '/products/agent-forge', badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Prompt Flux',  href: '/products/prompt-flux',  badge: 'Soon', badgeColor: 'amber' },
-];
+const prismData = loadProductData('model-prism', lang as 'de' | 'en');
+const atlasData = loadProductData('agent-atlas', lang as 'de' | 'en');
+const forgeData = loadProductData('agent-forge', lang as 'de' | 'en');
+const fluxData = loadProductData('prompt-flux', lang as 'de' | 'en');
 
-const productsEN = [
-  { label: 'Model Prism', href: '/en/products/model-prism', badge: prismVersion, badgeColor: 'emerald' },
-  { label: 'Agent Atlas', href: '/en/products/agent-atlas', badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Agent Forge', href: '/en/products/agent-forge', badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Prompt Flux',  href: '/en/products/prompt-flux',  badge: 'Soon', badgeColor: 'amber' },
-];
+const prefix = isDE ? '' : '/en';
+const allProducts = [prismData, atlasData, forgeData, fluxData];
 
-const products = isDE ? productsDE : productsEN;
-const productsOverview = isDE ? '/products' : '/en/products';
+const products = allProducts.map(p => ({
+  label: p.name,
+  href: `${prefix}/products/${p.slug}`,
+  badge: p.status === 'ga' ? prismVersion : 'Soon',
+  badgeColor: p.status === 'ga' ? 'emerald' : 'amber',
+}));
+
+const productsOverview = `${prefix}/products`;
 
 const docsSite = 'https://docs.ohara.systems';
 
-const docsLinksDE = [
-  { label: 'Model Prism', href: `${docsSite}/model-prism`, badge: prismVersion, badgeColor: 'emerald' },
-  { label: 'Agent Atlas', href: `${docsSite}/agent-atlas`, badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Agent Forge', href: `${docsSite}/agent-forge`, badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Prompt Flux',  href: `${docsSite}/prompt-flux`,  badge: 'Soon', badgeColor: 'amber' },
-];
-
-const docsLinksEN = [
-  { label: 'Model Prism', href: `${docsSite}/model-prism`, badge: prismVersion, badgeColor: 'emerald' },
-  { label: 'Agent Atlas', href: `${docsSite}/agent-atlas`, badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Agent Forge', href: `${docsSite}/agent-forge`, badge: 'Soon', badgeColor: 'amber' },
-  { label: 'Prompt Flux',  href: `${docsSite}/prompt-flux`,  badge: 'Soon', badgeColor: 'amber' },
-];
-
-const docsLinks = isDE ? docsLinksDE : docsLinksEN;
+const docsLinks = allProducts.map(p => ({
+  label: p.name,
+  href: `${docsSite}/${p.slug}`,
+  badge: p.status === 'ga' ? prismVersion : 'Soon',
+  badgeColor: p.status === 'ga' ? 'emerald' : 'amber',
+}));
 const docsOverview = docsSite;
 
 const navLinks = isDE

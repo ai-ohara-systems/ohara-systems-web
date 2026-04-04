@@ -1,0 +1,201 @@
+---
+interface Props {
+  lang: 'de' | 'en';
+  version: string;
+  prism: any;
+  enterprise: any;
+  atlas: any;
+  forge: any;
+  flux: any;
+}
+
+const { lang, version, prism, enterprise, atlas, forge, flux } = Astro.props;
+const isDE = lang === 'de';
+const prefix = isDE ? '' : '/en';
+
+const heroTitle = isDE ? 'Unsere Produkte' : 'Our Products';
+const heroSubtitle = isDE
+  ? 'Vier Tools. Eine Vision: AI-Teams produktiver, sicherer und kosteneffizienter machen.'
+  : 'Four tools. One vision: make AI teams more productive, safer, and cost-efficient.';
+
+const comingSoonHeader = isDE ? 'In Entwicklung' : 'In Development';
+
+const ctaTitle = isDE ? 'Sofort loslegen' : 'Get started now';
+const ctaDescription = isDE
+  ? 'Model Prism ist self-hosted, source-available und in unter 5 Minuten mit Docker Compose deployt.'
+  : 'Model Prism is self-hosted, source-available, and deployed in under 5 minutes with Docker Compose.';
+const ctaGithubLabel = isDE ? 'Model Prism auf GitHub' : 'Model Prism on GitHub';
+const ctaDocsLabel = isDE ? 'Dokumentation lesen' : 'Read the docs';
+const ctaDocsUrl = isDE ? 'https://docs.ohara.systems/model-prism/getting-started' : 'https://docs.ohara.systems';
+
+const comingSoonProducts = [
+  {
+    data: atlas,
+    hoverBorder: 'hover:border-[#818cf8]/30',
+    hoverShadow: 'hover:shadow-[0_0_40px_-12px_rgba(129,140,248,0.2)]',
+    gradientFrom: 'from-[#818cf8]/20',
+    gradientTo: 'to-[#38bdf8]/10',
+    borderColor: 'border-[#818cf8]/20',
+  },
+  {
+    data: forge,
+    hoverBorder: 'hover:border-[#e879f9]/30',
+    hoverShadow: 'hover:shadow-[0_0_40px_-12px_rgba(232,121,249,0.2)]',
+    gradientFrom: 'from-[#f97316]/15',
+    gradientTo: 'to-[#e879f9]/10',
+    borderColor: 'border-[#e879f9]/20',
+  },
+  {
+    data: flux,
+    hoverBorder: 'hover:border-[#e879f9]/30',
+    hoverShadow: 'hover:shadow-[0_0_40px_-12px_rgba(232,121,249,0.2)]',
+    gradientFrom: 'from-[#e879f9]/20',
+    gradientTo: 'to-[#818cf8]/10',
+    borderColor: 'border-[#e879f9]/20',
+  },
+];
+
+/* Icon SVG map for 16px highlight icons */
+const iconSvg: Record<string, string> = {
+  routing: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  users: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>',
+  cost: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',
+  terminal: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+  code: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+};
+---
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden px-6 py-24 md:py-32">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-[#38bdf8]/5 blur-3xl"></div>
+    <div class="absolute top-20 right-1/4 h-[300px] w-[400px] rounded-full bg-[#818cf8]/4 blur-3xl"></div>
+  </div>
+  <div class="relative mx-auto max-w-4xl text-center">
+    <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/50 mb-6">
+      ohara AI Factory
+    </div>
+    <h1 class="text-5xl font-bold tracking-tight text-white mb-5 md:text-6xl">{heroTitle}</h1>
+    <p class="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+      {heroSubtitle}
+    </p>
+  </div>
+</section>
+
+<!-- ===== MODEL PRISM — FEATURED ===== -->
+<section class="px-6 pb-8 border-t border-white/5">
+  <div class="mx-auto max-w-5xl pt-20">
+
+    <a href={`${prefix}/products/model-prism`}
+      class="group block rounded-2xl border border-white/10 bg-[#111118] p-8 mb-4 hover:border-[#38bdf8]/35 hover:shadow-[0_0_50px_-12px_rgba(56,189,248,0.25)] transition-all duration-300">
+      <div class="flex flex-col md:flex-row md:items-center gap-6 mb-8">
+        <div class="h-16 w-16 flex-shrink-0 rounded-2xl bg-gradient-to-br from-[#38bdf8]/20 via-[#818cf8]/15 to-[#38bdf8]/10 border border-[#38bdf8]/20 flex items-center justify-center">
+          <img src={prism.logo} alt={prism.name} width="40" height="40" class="h-10 w-10"/>
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <h2 class="text-2xl font-bold text-white">{prism.name}</h2>
+            <span class="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-medium text-emerald-400">{version}</span>
+            <span class="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs text-white/40">Source Available</span>
+            <span class="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs text-white/40">ELv2</span>
+          </div>
+          <p class="text-white/55 leading-relaxed max-w-2xl">
+            {prism.overview.description}
+          </p>
+        </div>
+        <div class="flex-shrink-0 text-[#38bdf8]/50 group-hover:text-[#38bdf8] transition-colors duration-200">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Feature grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 border-t border-white/8">
+        {prism.overview.highlights.map((h: any) => (
+          <div class="flex items-start gap-3">
+            <div class="h-8 w-8 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <Fragment set:html={iconSvg[h.icon] || iconSvg['code']} />
+            </div>
+            <div>
+              <div class="text-sm font-medium text-white mb-1">{h.title}</div>
+              <p class="text-xs text-white/40 leading-relaxed">{h.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </a>
+
+    <!-- Quick stats bar -->
+    <div class="flex flex-wrap gap-px rounded-xl overflow-hidden border border-white/8 mb-6">
+      {prism.overview.stats.map((s: any) => (
+        <div class="flex-1 min-w-[120px] bg-[#111118] px-5 py-4 text-center">
+          <div class="text-xl font-bold text-white">{s.value}</div>
+          <div class="text-xs text-white/35 mt-0.5">{s.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Enterprise CTA tile -->
+    <a href={prism.enterpriseLink} class="flex items-center gap-4 rounded-xl border border-violet-500/25 bg-gradient-to-r from-violet-500/8 to-violet-900/10 px-6 py-4 mb-16 hover:border-violet-500/40 hover:from-violet-500/12 transition-all duration-200 group">
+      <div class="h-9 w-9 rounded-lg bg-violet-500/15 border border-violet-500/25 flex items-center justify-center flex-shrink-0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <span class="text-sm font-semibold text-violet-300">{prism.overview.enterpriseCta.title}</span>
+        <p class="text-xs text-white/40 mt-0.5">{prism.overview.enterpriseCta.description}</p>
+      </div>
+      <div class="flex-shrink-0 text-violet-400/50 group-hover:text-violet-400 transition-colors duration-200">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- Coming soon -->
+    <div class="mb-4">
+      <h3 class="text-xs font-semibold uppercase tracking-widest text-white/30 mb-4">{comingSoonHeader}</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {comingSoonProducts.map((product) => (
+        <a href={`${prefix}/products/${product.data.slug}`}
+          class={`group block rounded-2xl border border-white/8 bg-[#111118] p-6 ${product.hoverBorder} ${product.hoverShadow} transition-all duration-300`}>
+          <div class={`h-12 w-12 rounded-xl bg-gradient-to-br ${product.gradientFrom} ${product.gradientTo} border ${product.borderColor} flex items-center justify-center mb-4`}>
+            <img src={product.data.logo} alt={product.data.name} width="30" height="30" class="h-7 w-7"/>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-semibold text-white/80 group-hover:text-white transition-colors duration-200">{product.data.name}</h3>
+            <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-xs text-amber-400">Soon</span>
+          </div>
+          <p class="text-xs text-white/40 leading-relaxed">{product.data.overview.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="px-6 py-20 border-t border-white/5 mt-12">
+  <div class="mx-auto max-w-3xl text-center">
+    <div class="rounded-2xl border border-white/10 bg-[#111118] p-12 relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div class="h-[300px] w-[500px] rounded-full bg-[#38bdf8]/5 blur-3xl"></div>
+      </div>
+      <div class="relative">
+        <h2 class="text-2xl font-bold text-white mb-3">{ctaTitle}</h2>
+        <p class="text-white/50 mb-8 leading-relaxed">
+          {ctaDescription}
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://github.com/ai-ohara-systems/model-prism" target="_blank" rel="noopener noreferrer"
+            class="bg-[#38bdf8] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#7dd3fc] transition-colors duration-200 inline-flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            {ctaGithubLabel}
+          </a>
+          <a href={ctaDocsUrl} target="_blank" rel="noopener noreferrer"
+            class="border border-white/20 text-white px-6 py-3 rounded-lg hover:border-white/40 transition-colors duration-200">
+            {ctaDocsLabel}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

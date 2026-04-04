@@ -2,6 +2,7 @@
 import SpaceAstronaut from './SpaceAstronaut.astro';
 import SpaceMoon from './SpaceMoon.astro';
 import { getModelPrismVersion } from '../lib/versions';
+import { loadProductData } from '../lib/products';
 
 interface Props {
   lang: 'de' | 'en';
@@ -11,6 +12,11 @@ const { lang } = Astro.props;
 const isDE = lang === 'de';
 const prefix = isDE ? '' : '/en';
 const prismVersion = await getModelPrismVersion();
+
+const prism = loadProductData('model-prism', lang);
+const atlas = loadProductData('agent-atlas', lang);
+const forge = loadProductData('agent-forge', lang);
+const flux = loadProductData('prompt-flux', lang);
 
 const t = {
   title: isDE ? 'ohara.systems — KI-Infrastruktur die funktioniert' : 'ohara.systems — AI Infrastructure That Works',
@@ -32,12 +38,12 @@ const t = {
   productsLabel: 'ohara AI Factory',
   productsTitle: isDE ? 'Unsere Produkte' : 'Our Products',
   productsSub: isDE ? 'Vier Werkzeuge. Eine Vision: AI-Teams produktiver, sicherer und kosteneffizienter machen.' : 'Four tools. One vision: make AI teams more productive, safer, and cost-efficient.',
-  prismDesc: isDE ? 'Multi-tenant LLM Gateway mit intelligentem Routing und Kostenkontrolle — OpenAI-kompatibel.' : 'Multi-tenant LLM gateway with intelligent routing and cost tracking — OpenAI-compatible.',
-  prismCta: isDE ? 'Mehr erfahren' : 'Learn more',
-  atlasDesc: isDE ? 'Eine kuratierte Bibliothek modularer, produktionsreifer AI-Agents — wiederverwendbar, komponierbar, integrierbar.' : 'A curated library of modular, production-ready AI agents — reusable, composable, and easy to integrate.',
-  forgeDesc: isDE ? 'Ein Framework zum Aufbau, Anpassung und Deployment von AI-Agents — von der Idee zum produktionsreifen System.' : 'A framework for building, customizing, and deploying AI agents — from idea to production-ready system.',
-  fluxDesc: isDE ? 'Eine Prompt-Optimierungs-Engine als API-Middleware — verbessert Prompts automatisch und integriert konfigurierbare Guardrails.' : 'A prompt optimization engine as API middleware — automatically improves prompts and enforces configurable guardrails.',
-  conceptCta: isDE ? 'Konzept ansehen' : 'View concept',
+  prismDesc: prism.home.description,
+  prismCta: prism.home.ctaLabel,
+  atlasDesc: atlas.home.description,
+  forgeDesc: forge.home.description,
+  fluxDesc: flux.home.description,
+  conceptCta: atlas.home.ctaLabel,
   // Blog section
   newsTitle: isDE ? 'Neuigkeiten' : 'Latest News',
   newsSub: isDE ? 'Aktuelles aus der Praxis — LLMOps, Routing, Kostenoptimierung und mehr.' : 'Practical knowledge from the field — LLMOps, routing, cost optimization and more.',

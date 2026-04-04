@@ -1,0 +1,77 @@
+---
+interface Props {
+  icon: string;
+  color: string;
+}
+const { icon, color } = Astro.props;
+---
+
+{icon === 'routing' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+)}
+{icon === 'users' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5">
+    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+  </svg>
+)}
+{icon === 'cost' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+)}
+{icon === 'code' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+)}
+{icon === 'log' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5">
+    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </svg>
+)}
+{icon === 'scale' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5">
+    <rect x="2" y="3" width="6" height="18"/><rect x="9" y="8" width="6" height="13"/><rect x="16" y="13" width="6" height="8"/>
+  </svg>
+)}
+{icon === 'shield' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+)}
+{icon === 'briefcase' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+)}
+{icon === 'clock' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+)}
+{icon === 'chat' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+)}
+{icon === 'star' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+)}
+{icon === 'search' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+)}
+{icon === 'puzzle' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 01-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 10-3.214 3.214c.446.166.855.497.925.968a.979.979 0 01-.276.837l-1.61 1.61a2.404 2.404 0 01-1.705.707 2.402 2.402 0 01-1.704-.706l-1.568-1.568a1.026 1.026 0 00-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 11-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 00-.289-.877l-1.568-1.568A2.402 2.402 0 011.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 103.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0112 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 113.237 3.237c-.464.18-.894.527-.967 1.02z"/></svg>
+)}
+{icon === 'check' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+)}
+{icon === 'brain' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M12 2a4 4 0 014 4v1a4 4 0 01-1.17 2.83L12 12.66l-2.83-2.83A4 4 0 018 7V6a4 4 0 014-4z"/><path d="M6.5 12.5C4 13 2 15 2 17.5S4 22 6.5 22c1.5 0 2.86-.73 3.7-1.86"/><path d="M17.5 12.5C20 13 22 15 22 17.5S20 22 17.5 22c-1.5 0-2.86-.73-3.7-1.86"/></svg>
+)}
+{icon === 'pipeline' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a3 3 0 003 3h6a3 3 0 003-3V9"/></svg>
+)}
+{icon === 'lock' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+)}
+{icon === 'sparkle' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/></svg>
+)}
+{icon === 'layers' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+)}
+{icon === 'terminal' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} stroke-width="1.5"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+)}

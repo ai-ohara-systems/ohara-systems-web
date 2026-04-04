@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "title": "Model Prism Enterprise — Erweitertes KI-Gateway für Teams | ohara.systems",
+    "description": "Model Prism Enterprise schaltet Multi-Tenant-Verwaltung, eigene Routing-Kategorien, LDAP/SSO, Budget-Kontrolle, Advanced Routing und Priority-Support frei. Self-hosted, air-gapped ready."
+  },
+  "slug": "prism-enterprise",
+  "name": "Model Prism",
+  "nameHighlight": "Enterprise",
+  "status": "ga",
+  "color": "#818cf8",
+  "badges": [
+    { "text": "Enterprise", "type": "brand" },
+    { "text": "Self-hosted", "type": "neutral" },
+    { "text": "Air-gapped ready", "type": "neutral" },
+    { "text": "Offline-Lizenz", "type": "neutral" }
+  ],
+  "hero": {
+    "description": "Alles aus der Free-Edition — plus Multi-Tenant-Verwaltung, eigene Routing-Kategorien, LDAP/SSO, Budget-Kontrolle und dedizierter Unterstützung. Gebaut für Teams, die KI im großen Maßstab betreiben."
+  },
+  "ctas": {
+    "sales": {
+      "label": "Vertrieb kontaktieren",
+      "url": "mailto:ai@ohara.systems?subject=Model%20Prism%20Enterprise%20Lizenz"
+    },
+    "free": {
+      "label": "Free Edition ansehen",
+      "url": "/products/model-prism"
+    },
+    "demo": {
+      "label": "Live Demo",
+      "url": "https://demo-prism.ohara.systems"
+    }
+  },
+  "comparison": {
+    "title": "Free vs. Enterprise",
+    "subtitle": "Alles, was du zum Vergleich brauchst — kein Verkaufsgespräch nötig.",
+    "free": {
+      "name": "Free",
+      "tagline": "Source Available — immer kostenlos",
+      "included": [
+        "Einzelner Mandant (eigener API-Key)",
+        "Intelligentes Modell-Routing",
+        "50+ Modell-Provider",
+        "Kosten-Tracking & Analytics",
+        "Request-Logging",
+        "Schreibgeschützte Tenant-Ansicht"
+      ],
+      "excluded": [
+        "Multi-Tenant-Verwaltung",
+        "Eigene Routing-Kategorien",
+        "LDAP / SSO",
+        "Budget-Limits pro Tenant",
+        "Kategorie-Benchmarks",
+        "Priority-Support",
+        "Custom Theming",
+        "Backlog-Priorisierung"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tagline": "Preis auf Anfrage",
+      "items": [
+        { "label": "Alles aus Free" },
+        {
+          "label": "Multi-Tenant-Verwaltung",
+          "detail": "unbegrenzt Tenants anlegen & verwalten"
+        },
+        {
+          "label": "Eigene Routing-Kategorien",
+          "detail": "eigene Modellauswahl-Logik definieren"
+        },
+        {
+          "label": "LDAP / SSO",
+          "detail": "Unternehmensverzeichnis anbinden"
+        },
+        {
+          "label": "Budget-Limits",
+          "detail": "Ausgabenobergrenzen pro Tenant mit Alerts"
+        },
+        {
+          "label": "Kategorie-Benchmarks",
+          "detail": "Routing-Genauigkeit evaluieren"
+        },
+        {
+          "label": "Priority-Support",
+          "detail": "dedizierte E-Mail-Adresse, 24h Response-SLA"
+        },
+        {
+          "label": "Custom Theming",
+          "detail": "White-Label mit eigenem Branding"
+        },
+        {
+          "label": "Backlog-Priorisierung",
+          "detail": "die Produkt-Roadmap direkt beeinflussen"
+        },
+        {
+          "label": "Offline-Lizenzschlüssel — funktioniert vollständig air-gapped"
+        }
+      ]
+    }
+  },
+  "deepDive": {
+    "title": "Gebaut für Enterprise KI-Betrieb",
+    "subtitle": "Model Prism Enterprise gibt deinem Plattform-Team volle Kontrolle darüber, wie KI in der gesamten Organisation eingesetzt wird.",
+    "items": [
+      {
+        "title": "Multi-Tenant-Verwaltung",
+        "description": "Unbegrenzt Tenants anlegen und verwalten — jeder mit isolierten API-Keys, Modellzugang und Nutzungskontingenten. Ideal für Teams, Abteilungen oder Kunden.",
+        "icon": "users",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "Eigene Routing-Kategorien",
+        "description": "Eigene Aufgaben-Kategorien definieren und den richtigen Modellen zuordnen. Preset-Profile hinzufügen, Routing-Genauigkeit benchmarken und für Kosten vs. Qualität optimieren.",
+        "icon": "briefcase",
+        "color": "#818cf8"
+      },
+      {
+        "title": "LDAP / SSO-Integration",
+        "description": "Active Directory oder beliebigen LDAP-Server anbinden. Nutzer automatisch synchronisieren, gruppenbasierte Zugriffsrichtlinien durchsetzen und manuelle Nutzerverwaltung eliminieren.",
+        "icon": "shield",
+        "color": "#22c55e"
+      },
+      {
+        "title": "Budget-Limits & Alerts",
+        "description": "Harte oder weiche Ausgabenobergrenzen pro Tenant setzen. Alerts erhalten, wenn Budgets sich dem Limit nähern, und Tenants automatisch drosseln oder sperren.",
+        "icon": "clock",
+        "color": "#f59e0b"
+      },
+      {
+        "title": "Priority-Support",
+        "description": "Dedizierte E-Mail-Adresse mit 24h Response-SLA. Direkter Zugang zum Engineering-Team für Eskalationen, Migrationen und Integrationshilfe.",
+        "icon": "chat",
+        "color": "#e879f9"
+      },
+      {
+        "title": "Backlog-Priorisierung",
+        "description": "Enterprise-Kunden können die Model Prism-Roadmap direkt beeinflussen. Features voten, Custom-Integrationen anfragen und sie schneller umgesetzt bekommen.",
+        "icon": "star",
+        "color": "#38bdf8"
+      }
+    ]
+  },
+  "licensing": {
+    "title": "Flexible Lizenzierung",
+    "description": "Enterprise-Lizenzen werden als Offline-Keys ausgeliefert — keine Telemetrie, keine Internetverbindung erforderlich. Vollständig air-gapped deploybar. Die Lizenzvalidierung erfolgt lokal per asymmetrischer Kryptographie.",
+    "options": [
+      {
+        "title": "Offline-Key",
+        "description": "Lokal signieren und verifizieren. Funktioniert ohne Netzwerkzugang. Kein Callback nach Hause."
+      },
+      {
+        "title": "Lizenzserver",
+        "description": "Mit license.ohara.systems verbinden für verwaltete Key-Distribution und -Erneuerung."
+      },
+      {
+        "title": "Individueller Vertrag",
+        "description": "Volumenlizenzen, unbefristete Lizenzen und individuelle Konditionen für größere Teams verfügbar."
+      }
+    ]
+  },
+  "bottomCta": {
+    "title": "Bereit zu skalieren?",
+    "description": "Erzähl uns von deinem Setup — wir schicken dir innerhalb eines Werktages ein Enterprise-Angebot.",
+    "salesLabel": "Vertrieb kontaktieren — ai@ohara.systems",
+    "salesUrl": "mailto:ai@ohara.systems?subject=Model%20Prism%20Enterprise%20Lizenz",
+    "docsLabel": "Dokumentation lesen",
+    "docsUrl": "https://docs.ohara.systems/model-prism"
+  }
+}

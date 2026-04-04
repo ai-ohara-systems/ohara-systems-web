@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Agent Forge — AI Agent Framework | ohara.systems",
+    "description": "A framework for building, customizing, and deploying AI agents — with full control over behavior, tools, and orchestration."
+  },
+  "slug": "agent-forge",
+  "name": "Agent Forge",
+  "logo": "/agent-forge-logo.svg",
+  "status": "coming-soon",
+  "color": "#e879f9",
+  "home": {
+    "description": "A framework for building, customizing, and deploying AI agents — from idea to production-ready system.",
+    "ctaLabel": "View concept",
+    "tags": ["Framework", "Orchestration", "Self-hosted"]
+  },
+  "overview": {
+    "description": "Framework for building, customizing, and deploying AI agents with full control over behavior and orchestration."
+  },
+  "tagline": "Forge intelligent systems.",
+  "hero": {
+    "description": "A framework for building, customizing, and deploying AI agents — with full control over behavior, tools, and orchestration. From single assistants to multi-agent pipelines."
+  },
+  "badges": [
+    { "text": "Coming soon", "type": "warning" },
+    { "text": "ohara AI Factory", "type": "neutral" },
+    { "text": "Agent Framework", "type": "neutral" }
+  ],
+  "concepts": [
+    {
+      "title": "Define Agent Behavior",
+      "description": "Describe how the agent decides, which tools it uses, and how it responds to context.",
+      "icon": "brain",
+      "color": "#e879f9"
+    },
+    {
+      "title": "Orchestration & Pipelines",
+      "description": "Connect agents into multi-step pipelines. Sequential, parallel, or event-driven.",
+      "icon": "pipeline",
+      "color": "#f97316"
+    },
+    {
+      "title": "Self-hosted & Private",
+      "description": "No vendor lock-in, no cloud dependency. Full control over data, models, and infrastructure.",
+      "icon": "lock",
+      "color": "#22c55e"
+    }
+  ],
+  "cta": {
+    "title": "Stay in the loop",
+    "githubLabel": "Follow us on GitHub",
+    "githubUrl": "https://github.com/ai-ohara-systems",
+    "backLabel": "All Products",
+    "backUrl": "/en/"
+  }
+}
