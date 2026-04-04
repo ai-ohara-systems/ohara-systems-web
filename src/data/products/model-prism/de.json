@@ -11,7 +11,8 @@
   "badges": [
     { "text": "Source Available", "type": "brand" },
     { "text": "Self-hosted", "type": "neutral" },
-    { "text": "OpenAI-kompatibel", "type": "neutral" }
+    { "text": "OpenAI-kompatibel", "type": "neutral" },
+    { "text": "Air-gapped ready", "type": "neutral" }
   ],
   "enterpriseLink": "/products/prism-enterprise",
   "home": {
@@ -81,8 +82,8 @@
         "color": "#818cf8"
       },
       {
-        "title": "Horizontale Skalierung",
-        "description": "Stateless-Architektur für einfaches horizontales Scaling. Kubernetes-ready, Health Checks, Graceful Shutdown. Von Single-Node bis Enterprise-Cluster.",
+        "title": "Air-gapped & Skalierbar",
+        "description": "Vollständig offline betreibbar mit OFFLINE=true — keine ausgehenden Verbindungen, keine Telemetrie. Stateless-Architektur für horizontales Scaling, Kubernetes-ready mit Helm Chart.",
         "icon": "scale",
         "color": "#e879f9"
       }
@@ -118,7 +119,7 @@
   },
   "bottomCta": {
     "title": "Bereit, Model Prism zu deployen?",
-    "description": "Source Available (ELv2), production-ready. Enterprise-Lizenz für erweiterte Features verfügbar. Community auf GitHub — Issues, Discussions und Pull Requests willkommen.",
+    "description": "Source Available (ELv2), production-ready. Vollständig air-gapped betreibbar mit OFFLINE=true — keine ausgehenden Verbindungen. Enterprise-Lizenz für erweiterte Features verfügbar.",
     "label": "Model Prism auf GitHub",
     "url": "https://github.com/ai-ohara-systems/model-prism"
   }
