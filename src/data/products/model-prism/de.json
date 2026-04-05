@@ -16,17 +16,17 @@
   ],
   "enterpriseLink": "/products/prism-enterprise",
   "home": {
-    "description": "Multi-tenant LLM Gateway mit intelligentem Routing und Kostenkontrolle — OpenAI-kompatibel.",
+    "description": "Multi-tenant LLM Gateway mit intelligentem Routing, selbstoptimierender Modellwahl und Kostenkontrolle — OpenAI-kompatibel.",
     "ctaLabel": "Mehr erfahren",
-    "tags": ["Source Available", "Self-hosted", "Auto-Routing", "Cost Tracking"]
+    "tags": ["Source Available", "Self-hosted", "Auto-Routing", "Self-Optimizing", "Cost Tracking"]
   },
   "overview": {
-    "description": "Der OpenAI-kompatible LLM Gateway für Teams — mit intelligentem Routing, Multi-Tenant-Isolation und granularer Kostenkontrolle. Self-hosted, in Minuten deployt.",
+    "description": "Der OpenAI-kompatible LLM Gateway für Teams — mit intelligentem Routing, selbstoptimierender Modellwahl, Multi-Tenant-Isolation und granularer Kostenkontrolle. Self-hosted, in Minuten deployt.",
     "highlights": [
       { "title": "Intelligentes Routing", "description": "Automatische Modellwahl nach Kosten, Latenz und Aufgabentyp.", "icon": "routing" },
+      { "title": "Selbstoptimierend", "description": "Integrierter Benchmark-Agent optimiert das Routing aus echtem Traffic — automatisch.", "icon": "chart" },
       { "title": "Multi-Tenant", "description": "Vollständige Isolation zwischen Teams, Projekten und Kunden.", "icon": "users" },
-      { "title": "Kostenkontrolle", "description": "Budget-Limits, Echtzeit-Tracking und detailliertes Usage-Logging.", "icon": "cost" },
-      { "title": "OpenAI-kompatibel", "description": "Drop-in: einfach die Base URL ersetzen — kein Code-Change nötig.", "icon": "terminal" }
+      { "title": "Kostenkontrolle", "description": "Budget-Limits, Echtzeit-Tracking und detailliertes Usage-Logging.", "icon": "cost" }
     ],
     "stats": [
       { "value": "GPT · Claude", "label": "Mistral · Llama · mehr" },
@@ -40,7 +40,7 @@
     }
   },
   "hero": {
-    "description": "Multi-tenant LLM Gateway mit intelligentem Routing und Kostenkontrolle. Drop-in Ersatz für die OpenAI API — für deine gesamte Organisation."
+    "description": "Multi-tenant LLM Gateway mit intelligentem Routing, selbstoptimierender Modellwahl und Kostenkontrolle. Drop-in Ersatz für die OpenAI API — für deine gesamte Organisation."
   },
   "ctas": {
     "demo": { "label": "Live Demo", "url": "https://demo-prism.ohara.systems" },
@@ -56,6 +56,12 @@
         "description": "Classifier-basiertes Routing leitet jede Anfrage automatisch ans optimale Modell — basierend auf Komplexität, Kontext und konfigurierten Kostentiers. Regelsets und Fallbacks für maximale Kontrolle.",
         "icon": "routing",
         "color": "#38bdf8"
+      },
+      {
+        "title": "Selbstoptimierendes Routing",
+        "description": "Der integrierte Benchmark-Agent analysiert jede Routing-Entscheidung anhand realer Ergebnisse. Er erkennt Over-Routing und Under-Routing, passt dann Schwellwerte, Keyword-Regeln und Modell-Prioritäten an — mit Dry-Run-Simulation vor jeder Änderung. Die Routing-Qualität verbessert sich automatisch über die Zeit.",
+        "icon": "chart",
+        "color": "#22c55e"
       },
       {
         "title": "Multi-Tenant & RBAC",

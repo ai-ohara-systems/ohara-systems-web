@@ -82,6 +82,10 @@
           "detail": "Routing-Genauigkeit evaluieren"
         },
         {
+          "label": "Selbstoptimierender Benchmark-Agent",
+          "detail": "autonomes Routing-Finetuning aus echten Traffic-Daten"
+        },
+        {
           "label": "Priority-Support",
           "detail": "dedizierte E-Mail-Adresse, 24h Response-SLA"
         },
@@ -114,6 +118,12 @@
         "description": "Eigene Aufgaben-Kategorien definieren und den richtigen Modellen zuordnen. Preset-Profile hinzufügen, Routing-Genauigkeit benchmarken und für Kosten vs. Qualität optimieren.",
         "icon": "briefcase",
         "color": "#818cf8"
+      },
+      {
+        "title": "Selbstoptimierender Benchmark-Agent",
+        "description": "Der integrierte Benchmark-Agent analysiert kontinuierlich Routing-Entscheidungen anhand realer Ergebnisse. Er passt Token-Schwellwerte, Keyword-Regeln, Kategorie-Tiers und Modell-Prioritäten an — mit obligatorischer Dry-Run-Simulation vor jeder Änderung. Einmal einrichten, und die Routing-Qualität verbessert sich automatisch.",
+        "icon": "chart",
+        "color": "#22c55e"
       },
       {
         "title": "LDAP / SSO-Integration",

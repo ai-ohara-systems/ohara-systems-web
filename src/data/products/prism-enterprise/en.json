@@ -82,6 +82,10 @@
           "detail": "evaluate routing accuracy"
         },
         {
+          "label": "Self-Optimizing Benchmark Agent",
+          "detail": "autonomous routing fine-tuning from real traffic data"
+        },
+        {
           "label": "Priority support",
           "detail": "dedicated email address, 24h response SLA"
         },
@@ -114,6 +118,12 @@
         "description": "Define your own task categories and map them to the right models. Add preset profiles, benchmark routing accuracy, and optimize for cost vs. quality.",
         "icon": "briefcase",
         "color": "#818cf8"
+      },
+      {
+        "title": "Self-Optimizing Benchmark Agent",
+        "description": "The built-in Benchmark Agent continuously analyzes routing decisions against real outcomes. It adjusts token thresholds, keyword rules, category tiers, and model priorities — with mandatory dry-run simulation before every change. Set it up once, and routing quality improves automatically.",
+        "icon": "chart",
+        "color": "#22c55e"
       },
       {
         "title": "LDAP / SSO Integration",
