@@ -7,16 +7,17 @@ interface Props {
   atlas: any;
   forge: any;
   flux: any;
+  factory: any;
 }
 
-const { lang, version, prism, enterprise, atlas, forge, flux } = Astro.props;
+const { lang, version, prism, enterprise, atlas, forge, flux, factory } = Astro.props;
 const isDE = lang === 'de';
 const prefix = isDE ? '' : '/en';
 
 const heroTitle = isDE ? 'Unsere Produkte' : 'Our Products';
 const heroSubtitle = isDE
-  ? 'Vier Tools. Eine Vision: AI-Teams produktiver, sicherer und kosteneffizienter machen.'
-  : 'Four tools. One vision: make AI teams more productive, safer, and cost-efficient.';
+  ? 'Fünf Produkte. Eine Vision: AI-Teams produktiver, sicherer und kosteneffizienter machen.'
+  : 'Five products. One vision: make AI teams more productive, safer, and cost-efficient.';
 
 const comingSoonHeader = isDE ? 'In Entwicklung' : 'In Development';
 
@@ -57,6 +58,7 @@ const comingSoonProducts = [
 
 /* Icon SVG map for 16px highlight icons */
 const iconSvg: Record<string, string> = {
+  chart: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
   routing: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
   users: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>',
   cost: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',
@@ -147,6 +149,27 @@ const iconSvg: Record<string, string> = {
       </div>
       <div class="flex-shrink-0 text-violet-400/50 group-hover:text-violet-400 transition-colors duration-200">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- AI Factory — Platform -->
+    <a href={`${prefix}/products/ai-factory`}
+      class="group block rounded-2xl border border-[#22c55e]/15 bg-[#111118] p-6 mb-8 hover:border-[#22c55e]/35 hover:shadow-[0_0_50px_-12px_rgba(34,197,94,0.2)] transition-all duration-300">
+      <div class="flex flex-col md:flex-row md:items-center gap-5">
+        <div class="h-14 w-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-[#22c55e]/20 via-[#38bdf8]/10 to-[#818cf8]/10 border border-[#22c55e]/25 flex items-center justify-center">
+          <img src={factory.logo} alt={factory.name} width="34" height="34" class="h-8 w-8"/>
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <h2 class="text-xl font-bold text-white">{factory.name}</h2>
+            <span class="rounded-full bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 text-xs font-medium text-amber-400">Soon</span>
+            <span class="rounded-full bg-[#22c55e]/10 border border-[#22c55e]/20 px-2.5 py-0.5 text-xs text-[#22c55e]">Unified Platform</span>
+          </div>
+          <p class="text-white/50 leading-relaxed text-sm max-w-2xl">{factory.overview.description}</p>
+        </div>
+        <div class="flex-shrink-0 text-[#22c55e]/50 group-hover:text-[#22c55e] transition-colors duration-200">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </div>
     </a>
 

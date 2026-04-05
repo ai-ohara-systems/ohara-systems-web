@@ -9,6 +9,7 @@ const enterprise = loadProductData('prism-enterprise', 'de');
 const atlas = loadProductData('agent-atlas', 'de');
 const forge = loadProductData('agent-forge', 'de');
 const flux = loadProductData('prompt-flux', 'de');
+const factory = loadProductData('ai-factory', 'de');
 const version = await getModelPrismVersion();
 ---
 
@@ -19,5 +20,5 @@ const version = await getModelPrismVersion();
   canonicalPath="/products"
   alternatePath="/en/products"
 >
-  <ProductsOverviewPage lang="de" version={version} prism={prism} enterprise={enterprise} atlas={atlas} forge={forge} flux={flux} />
+  <ProductsOverviewPage lang="de" version={version} prism={prism} enterprise={enterprise} atlas={atlas} forge={forge} flux={flux} factory={factory} />
 </Base>

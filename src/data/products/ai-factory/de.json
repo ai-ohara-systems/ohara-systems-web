@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "AI Factory — Einheitliche KI-Operations-Plattform | ohara.systems",
+    "description": "Die einheitliche Control Plane für Enterprise KI-Betrieb. Verbindet Model Prism, Prompt Flux, Agent Forge und Agent Atlas in einer einzigen, self-hosted Plattform."
+  },
+  "slug": "ai-factory",
+  "name": "AI Factory",
+  "logo": "/ai-factory-logo.svg",
+  "status": "coming-soon",
+  "color": "#22c55e",
+  "home": {
+    "description": "Einheitliche Control Plane die Routing, Guardrails, Agents und Prompt-Optimierung in einer self-hosted Plattform verbindet.",
+    "ctaLabel": "Konzept ansehen",
+    "tags": ["Unified Platform", "Enterprise", "Self-hosted"]
+  },
+  "overview": {
+    "description": "Die einheitliche Control Plane für Enterprise KI-Betrieb — verbindet Model Prism, Prompt Flux, Agent Forge und Agent Atlas in einer Plattform."
+  },
+  "tagline": "Eine Plattform. Deine gesamte KI.",
+  "hero": {
+    "description": "AI Factory ist die einheitliche Control Plane die alle ohara Produkte verdrahtet — Model Prism für Routing und Kostenkontrolle, Prompt Flux für Guardrails und Prompt-Optimierung, Agent Forge zum Bauen von Agents, und Agent Atlas für fertige Agent-Templates. Ein Dashboard, ein Tenant-Register, ein Audit Log."
+  },
+  "badges": [
+    { "text": "Demnächst", "type": "warning" },
+    { "text": "Enterprise", "type": "neutral" },
+    { "text": "Unified Platform", "type": "neutral" }
+  ],
+  "products": [
+    {
+      "name": "Model Prism",
+      "role": "Routing & Kostenkontrolle",
+      "description": "Intelligentes Modell-Routing, Per-Tenant Cost Tracking, Auto-Routing mit selbstoptimierendem Benchmark-Agent.",
+      "color": "#38bdf8",
+      "logo": "/model-prism-logo.svg",
+      "status": "ga",
+      "url": "/products/model-prism"
+    },
+    {
+      "name": "Prompt Flux",
+      "role": "Guardrails & Prompt-Optimierung",
+      "description": "PII-Erkennung, Prompt-Injection-Prävention, Content-Policy-Durchsetzung und automatische Prompt-Verbesserung — via self-hosted LLMs.",
+      "color": "#f97316",
+      "logo": "/prompt-flux-logo.svg",
+      "status": "coming-soon",
+      "url": "/products/prompt-flux"
+    },
+    {
+      "name": "Agent Forge",
+      "role": "Agents bauen & deployen",
+      "description": "Framework zum Bauen, Anpassen und Deployen von AI-Agenten mit voller Kontrolle über Verhalten und Orchestrierung.",
+      "color": "#e879f9",
+      "logo": "/agent-forge-logo.svg",
+      "status": "coming-soon",
+      "url": "/products/agent-forge"
+    },
+    {
+      "name": "Agent Atlas",
+      "role": "Fertige Agent-Bibliothek",
+      "description": "Kuratierte Bibliothek produktionsreifer AI-Agenten — modular, komponierbar, sofort einsetzbar.",
+      "color": "#818cf8",
+      "logo": "/agent-atlas-logo.svg",
+      "status": "coming-soon",
+      "url": "/products/agent-atlas"
+    }
+  ],
+  "flow": {
+    "title": "So verbindet es sich",
+    "description": "AI Factory ist die Orchestrierungs-Schicht die alle vier Produkte zu einer End-to-End-Pipeline verdrahtet.",
+    "steps": [
+      { "label": "Client / Agent", "sub": "Request kommt an" },
+      { "label": "Prompt Flux", "sub": "Guardrails + Optimierung", "color": "#f97316" },
+      { "label": "Model Prism", "sub": "Smart Routing + Kostenkontrolle", "color": "#38bdf8" },
+      { "label": "LLM Provider", "sub": "OpenAI, Anthropic, Ollama, ..." }
+    ]
+  },
+  "capabilities": {
+    "title": "Was AI Factory hinzufügt",
+    "items": [
+      {
+        "title": "Single Pane of Glass",
+        "description": "Ein Dashboard für Agents, Prompts, Routing, Kosten und Guardrails. Kein Wechseln mehr zwischen vier Admin-UIs.",
+        "icon": "terminal",
+        "color": "#22c55e"
+      },
+      {
+        "title": "Einheitliches Tenant-Register",
+        "description": "Einmal einen Tenant in AI Factory anlegen — automatische Weiterleitung an Model Prism (Routing), Prompt Flux (Guardrails) und Agent Forge (Berechtigungen).",
+        "icon": "users",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "Produktübergreifende Analytics",
+        "description": "End-to-End-Sichtbarkeit: Welcher Agent hat welchen Request gemacht, welche Guardrails haben gegriffen, wie hat der Router entschieden, was hat es gekostet — in einer Timeline.",
+        "icon": "cost",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Orchestrierungs-Schicht",
+        "description": "Produkte deklarativ verdrahten. Ein Agent aus Atlas/Forge nutzt automatisch Prompt Flux Guardrails und Model Prism Routing — null manuelles Plumbing.",
+        "icon": "pipeline",
+        "color": "#e879f9"
+      },
+      {
+        "title": "Zentrales Audit Log",
+        "description": "Jeder Request, Guardrail-Hit, Routing-Entscheidung und Agent-Aktion in einem unveränderlichen Audit Trail. Gemacht für Compliance-Teams.",
+        "icon": "log",
+        "color": "#f97316"
+      },
+      {
+        "title": "Self-hosted & Air-gapped",
+        "description": "Die gesamte Plattform läuft auf deiner Infrastruktur. Keine SaaS-Abhängigkeit, keine Daten verlassen dein Netzwerk. Enterprise-Lizenz mit Offline-Aktivierung.",
+        "icon": "lock",
+        "color": "#22c55e"
+      }
+    ]
+  },
+  "example": {
+    "title": "Beispiel: Customer Support in 5 Minuten",
+    "steps": [
+      "AI Factory öffnen, Projekt \"Customer Support\" anlegen",
+      "Fertigen Agent aus Agent Atlas wählen (z.B. \"Support Responder v2\")",
+      "In Agent Forge anpassen — eigene Knowledge Base, Tonalität, Eskalationsregeln",
+      "Prompt Flux konfiguriert sich automatisch: PII-Redaktion für Kundendaten, kein medizinischer Rat",
+      "Model Prism routet: einfache Fragen → Haiku, komplexe Eskalationen → Opus",
+      "AI Factory Dashboard: Agent-Performance, Kosten, Guardrail-Hits, Routing-Qualität — alles in einer Ansicht"
+    ]
+  },
+  "cta": {
+    "title": "Interesse an AI Factory?",
+    "description": "AI Factory ist in früher Entwicklung. Starte heute mit Model Prism — kostenlos, self-hosted, und die Basis der Plattform.",
+    "githubLabel": "Mit Model Prism starten",
+    "githubUrl": "https://github.com/ai-ohara-systems/model-prism",
+    "altLabel": "Kontakt — ai@ohara.systems",
+    "altUrl": "mailto:ai@ohara.systems?subject=AI%20Factory%20Interesse",
+    "backLabel": "Zurück zur Übersicht",
+    "backUrl": "/products"
+  }
+}

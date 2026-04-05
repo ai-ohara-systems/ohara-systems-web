@@ -9,15 +9,16 @@ const enterprise = loadProductData('prism-enterprise', 'en');
 const atlas = loadProductData('agent-atlas', 'en');
 const forge = loadProductData('agent-forge', 'en');
 const flux = loadProductData('prompt-flux', 'en');
+const factory = loadProductData('ai-factory', 'en');
 const version = await getModelPrismVersion();
 ---
 
 <Base
   title="Products — ohara AI Factory | ohara.systems"
-  description="The ohara AI Factory: Model Prism, Agent Atlas, Agent Forge and Prompt Flux — source-available AI infrastructure for teams (ELv2)."
+  description="The ohara AI Factory: Model Prism, Agent Atlas, Agent Forge, Prompt Flux, and AI Factory — source-available AI infrastructure for teams (ELv2)."
   lang="en"
   canonicalPath="/en/products"
   alternatePath="/products"
 >
-  <ProductsOverviewPage lang="en" version={version} prism={prism} enterprise={enterprise} atlas={atlas} forge={forge} flux={flux} />
+  <ProductsOverviewPage lang="en" version={version} prism={prism} enterprise={enterprise} atlas={atlas} forge={forge} flux={flux} factory={factory} />
 </Base>

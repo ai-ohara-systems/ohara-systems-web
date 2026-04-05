@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "AI Factory — Unified AI Operations Platform | ohara.systems",
+    "description": "The unified control plane for enterprise AI operations. Connects Model Prism, Prompt Flux, Agent Forge, and Agent Atlas into a single, self-hosted platform."
+  },
+  "slug": "ai-factory",
+  "name": "AI Factory",
+  "logo": "/ai-factory-logo.svg",
+  "status": "coming-soon",
+  "color": "#22c55e",
+  "home": {
+    "description": "Unified control plane that connects routing, guardrails, agents, and prompt optimization into one self-hosted platform.",
+    "ctaLabel": "View concept",
+    "tags": ["Unified Platform", "Enterprise", "Self-hosted"]
+  },
+  "overview": {
+    "description": "The unified control plane for enterprise AI operations — connects Model Prism, Prompt Flux, Agent Forge, and Agent Atlas into a single platform."
+  },
+  "tagline": "One platform. All your AI.",
+  "hero": {
+    "description": "AI Factory is the unified control plane that wires together all ohara products — Model Prism for routing and cost control, Prompt Flux for guardrails and prompt optimization, Agent Forge for building agents, and Agent Atlas for pre-built agent templates. One dashboard, one tenant registry, one audit log."
+  },
+  "badges": [
+    { "text": "Coming soon", "type": "warning" },
+    { "text": "Enterprise", "type": "neutral" },
+    { "text": "Unified Platform", "type": "neutral" }
+  ],
+  "products": [
+    {
+      "name": "Model Prism",
+      "role": "Routing & Cost Control",
+      "description": "Intelligent model routing, per-tenant cost tracking, auto-routing with self-optimizing Benchmark Agent.",
+      "color": "#38bdf8",
+      "logo": "/model-prism-logo.svg",
+      "status": "ga",
+      "url": "/en/products/model-prism"
+    },
+    {
+      "name": "Prompt Flux",
+      "role": "Guardrails & Prompt Optimization",
+      "description": "PII detection, prompt injection prevention, content policy enforcement, and automatic prompt improvement — via self-hosted LLMs.",
+      "color": "#f97316",
+      "logo": "/prompt-flux-logo.svg",
+      "status": "coming-soon",
+      "url": "/en/products/prompt-flux"
+    },
+    {
+      "name": "Agent Forge",
+      "role": "Build & Deploy Agents",
+      "description": "Framework for building, customizing, and deploying AI agents with full control over behavior and orchestration.",
+      "color": "#e879f9",
+      "logo": "/agent-forge-logo.svg",
+      "status": "coming-soon",
+      "url": "/en/products/agent-forge"
+    },
+    {
+      "name": "Agent Atlas",
+      "role": "Pre-built Agent Library",
+      "description": "Curated library of production-ready AI agents — modular, composable, ready to deploy.",
+      "color": "#818cf8",
+      "logo": "/agent-atlas-logo.svg",
+      "status": "coming-soon",
+      "url": "/en/products/agent-atlas"
+    }
+  ],
+  "flow": {
+    "title": "How it connects",
+    "description": "AI Factory is the orchestration layer that wires the four products into an end-to-end pipeline.",
+    "steps": [
+      { "label": "Client / Agent", "sub": "Request arrives" },
+      { "label": "Prompt Flux", "sub": "Guardrails + optimization", "color": "#f97316" },
+      { "label": "Model Prism", "sub": "Smart routing + cost control", "color": "#38bdf8" },
+      { "label": "LLM Provider", "sub": "OpenAI, Anthropic, Ollama, ..." }
+    ]
+  },
+  "capabilities": {
+    "title": "What AI Factory adds",
+    "items": [
+      {
+        "title": "Single Pane of Glass",
+        "description": "One dashboard for agents, prompts, routing, costs, and guardrails. No more switching between four admin UIs.",
+        "icon": "terminal",
+        "color": "#22c55e"
+      },
+      {
+        "title": "Unified Tenant Registry",
+        "description": "Create a tenant once in AI Factory — it propagates to Model Prism (routing), Prompt Flux (guardrails), and Agent Forge (permissions) automatically.",
+        "icon": "users",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "Cross-Product Analytics",
+        "description": "End-to-end visibility: which agent made which request, what guardrails fired, how the router decided, what it cost — in one timeline.",
+        "icon": "cost",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Orchestration Layer",
+        "description": "Wire products together declaratively. An agent from Atlas/Forge automatically uses Prompt Flux guardrails and Model Prism routing — zero manual plumbing.",
+        "icon": "pipeline",
+        "color": "#e879f9"
+      },
+      {
+        "title": "Centralized Audit Log",
+        "description": "Every request, guardrail hit, routing decision, and agent action in one immutable audit trail. Built for compliance teams.",
+        "icon": "log",
+        "color": "#f97316"
+      },
+      {
+        "title": "Self-hosted & Air-gapped",
+        "description": "The entire platform runs on your infrastructure. No SaaS dependency, no data leaving your network. Enterprise license with offline activation.",
+        "icon": "lock",
+        "color": "#22c55e"
+      }
+    ]
+  },
+  "example": {
+    "title": "Example: Customer Support in 5 minutes",
+    "steps": [
+      "Open AI Factory, create project \"Customer Support\"",
+      "Pick a pre-built agent from Agent Atlas (e.g. \"Support Responder v2\")",
+      "Customize it in Agent Forge — add your knowledge base, set tone, define escalation rules",
+      "Prompt Flux auto-configures: PII redaction for customer data, no medical advice guardrail",
+      "Model Prism routes: simple questions → Haiku, complex escalations → Opus",
+      "AI Factory dashboard: agent performance, costs, guardrail hits, routing quality — all in one view"
+    ]
+  },
+  "cta": {
+    "title": "Interested in AI Factory?",
+    "description": "AI Factory is in early development. Start with Model Prism today — it's free, self-hosted, and the foundation of the platform.",
+    "githubLabel": "Start with Model Prism",
+    "githubUrl": "https://github.com/ai-ohara-systems/model-prism",
+    "altLabel": "Contact us — ai@ohara.systems",
+    "altUrl": "mailto:ai@ohara.systems?subject=AI%20Factory%20Interest",
+    "backLabel": "Back to products",
+    "backUrl": "/en/products"
+  }
+}

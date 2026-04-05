@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import AIFactoryPage from '../../components/AIFactoryPage.astro';
+import { loadProductData } from '../../lib/products';
+
+const data = loadProductData('ai-factory', 'de');
+---
+
+<Base title={data.meta.title} description={data.meta.description} lang="de" canonicalPath="/products/ai-factory" alternatePath="/en/products/ai-factory">
+  <AIFactoryPage data={data} lang="de" />
+</Base>
