@@ -71,7 +71,7 @@
       },
       {
         "title": "Echtzeit-Kostenkontrolle",
-        "description": "Token-genaues Cost Tracking pro Tenant, Modell und Zeitraum. Budget-Alerts, automatische Drosselung bei Überschreitung und detaillierte Analytics-Dashboards.",
+        "description": "Token-genaues Cost Tracking pro Tenant, Modell und Zeitraum. Budget-Alerts, automatische Drosselung bei Überschreitung, vollständiges Audit Log jeder Anfrage und detaillierte Analytics-Dashboards.",
         "icon": "cost",
         "color": "#e879f9"
       },
@@ -80,12 +80,6 @@
         "description": "Drop-in Ersatz für die OpenAI API — keine Codeänderungen nötig. Unterstützt Chat Completions, Embeddings und Function Calling. Kompatibel mit jedem OpenAI SDK.",
         "icon": "code",
         "color": "#38bdf8"
-      },
-      {
-        "title": "Prompt Logging & Audit Trail",
-        "description": "Vollständiges Audit Log aller LLM-Anfragen — Prompt, Response, Modell, Tokens, Kosten und Timestamp. Exportierbar für Compliance und Debugging.",
-        "icon": "log",
-        "color": "#818cf8"
       },
       {
         "title": "Air-gapped & Skalierbar",
