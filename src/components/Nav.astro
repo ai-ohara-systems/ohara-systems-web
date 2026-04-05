@@ -226,12 +226,13 @@ const enHref = currentPath.startsWith('/en') ? currentPath : '/en' + (currentPat
       <!-- Mobile menu button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-white/60 hover:text-white transition-colors"
+        class="md:hidden p-3 -mr-2 text-white/60 hover:text-white transition-colors"
         aria-label="Menu"
         aria-expanded="false"
+        type="button"
       >
-        <svg id="icon-open"  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        <svg id="icon-open"  class="pointer-events-none" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <svg id="icon-close" class="pointer-events-none hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
   </nav>
