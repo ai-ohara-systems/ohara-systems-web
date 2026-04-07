@@ -53,51 +53,39 @@
     "items": [
       {
         "title": "Intelligent Auto-Routing",
-        "description": "Classifier-based routing automatically directs each request to the optimal model — based on complexity, context, and configured cost tiers. Rule sets and fallbacks for maximum control.",
+        "description": "8-tier routing with classifier-based model selection. Automatic provider failover with circuit breaker, context-aware model upgrades, A/B testing with statistical analysis, and automated quality scoring on every response.",
         "icon": "routing",
         "color": "#38bdf8"
       },
       {
         "title": "Self-Optimizing Routing",
-        "description": "The built-in Benchmark Agent analyzes every routing decision against real outcomes. It detects over-routing and under-routing, then adjusts thresholds, keyword rules, and model priorities — with dry-run simulation before every change. Routing quality improves automatically over time.",
+        "description": "The built-in Benchmark Agent analyzes every routing decision against real outcomes. It detects over-routing and under-routing, then adjusts thresholds, keyword rules, and model priorities — with dry-run simulation before every change.",
         "icon": "chart",
         "color": "#22c55e"
       },
       {
         "title": "Multi-Tenant & RBAC",
-        "description": "Full tenant isolation: Every team, every customer gets their own API keys, quotas, and permissions. RBAC at tenant and model level, LDAP/SSO integration.",
+        "description": "Full tenant isolation with multiple API keys per tenant, usage quotas (hard/soft/auto-economy), HMAC-signed webhooks for budget and provider events, and RBAC at tenant and model level with LDAP/SSO integration.",
         "icon": "users",
         "color": "#818cf8"
       },
       {
         "title": "Real-Time Cost Control",
-        "description": "Token-accurate cost tracking per tenant, model, and time period. Budget alerts, automatic throttling on overage, full audit trail of every request, and detailed analytics dashboards.",
+        "description": "Token-accurate cost tracking per tenant, model, and time period. Budget alerts with automatic throttling, usage quotas, full audit trail of every request, and detailed analytics dashboards with session grouping.",
         "icon": "cost",
         "color": "#e879f9"
       },
       {
         "title": "OpenAI-Compatible API",
-        "description": "Drop-in replacement for the OpenAI API — no code changes required. Supports Chat Completions, Embeddings, and Function Calling. Compatible with every OpenAI SDK.",
+        "description": "Drop-in replacement for the OpenAI API — no code changes required. Supports Chat Completions, Embeddings, and Function Calling. Compatible with every OpenAI SDK and AI coding tool.",
         "icon": "code",
         "color": "#38bdf8"
       },
       {
         "title": "Air-gapped & Scalable",
-        "description": "Fully offline with OFFLINE=true — no outbound connections, no telemetry. Stateless architecture for horizontal scaling, Kubernetes-ready with Helm chart.",
+        "description": "Fully offline with OFFLINE=true — no outbound connections, no telemetry. Stateless architecture for horizontal scaling, Kubernetes-ready with Helm chart. Node 22 with zero CVEs.",
         "icon": "scale",
         "color": "#e879f9"
-      },
-      {
-        "title": "Provider Fallback & Quality",
-        "description": "Circuit breaker health monitoring, automatic provider failover, context-aware model upgrades, and automated quality scoring on every response. A/B testing for routing with statistical analysis.",
-        "icon": "shield",
-        "color": "#22c55e"
-      },
-      {
-        "title": "Webhooks, Quotas & Multi-Key",
-        "description": "Usage quotas with soft/hard enforcement, HMAC-signed webhook notifications for budget and provider events, and multiple API keys per tenant with individual lifecycle management.",
-        "icon": "bell",
-        "color": "#f59e0b"
       }
     ]
   },
