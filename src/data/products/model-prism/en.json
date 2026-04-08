@@ -58,8 +58,8 @@
         "color": "#38bdf8"
       },
       {
-        "title": "Self-Optimizing Routing",
-        "description": "The built-in Benchmark Agent analyzes every routing decision against real outcomes. It detects over-routing and under-routing, then adjusts thresholds, keyword rules, and model priorities — with dry-run simulation before every change.",
+        "title": "Self-Optimizing Routing & AI Testing",
+        "description": "Built-in Benchmark Agent, Test Route dry-run with step-by-step trace, and AI-powered Synthetic Tests — generate test prompts, run them against your routing config, and get actionable quality and cost suggestions. Choose any model for generation and evaluation.",
         "icon": "chart",
         "color": "#22c55e"
       },

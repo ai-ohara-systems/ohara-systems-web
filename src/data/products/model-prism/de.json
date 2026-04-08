@@ -58,8 +58,8 @@
         "color": "#38bdf8"
       },
       {
-        "title": "Selbstoptimierendes Routing",
-        "description": "Der integrierte Benchmark-Agent analysiert jede Routing-Entscheidung anhand realer Ergebnisse. Er erkennt Over-Routing und Under-Routing, passt Schwellwerte, Keyword-Regeln und Modell-Prioritäten an — mit Dry-Run-Simulation vor jeder Änderung.",
+        "title": "Selbstoptimierendes Routing & AI Testing",
+        "description": "Integrierter Benchmark-Agent, Test-Route-Dry-Run mit schrittweiser Nachverfolgung und KI-gesteuerte Synthetische Tests — Testprompts generieren, gegen die Routing-Konfiguration laufen lassen und umsetzbare Qualitäts- und Kostenvorschläge erhalten. Beliebiges Modell für Generierung und Auswertung wählbar.",
         "icon": "chart",
         "color": "#22c55e"
       },
