@@ -76,8 +76,8 @@
         "color": "#e879f9"
       },
       {
-        "title": "OpenAI-kompatible API",
-        "description": "Drop-in Ersatz für die OpenAI API — keine Codeänderungen nötig. Unterstützt Chat Completions, Embeddings und Function Calling. Kompatibel mit jedem OpenAI SDK und KI-Coding-Tool.",
+        "title": "OpenAI-kompatible API & Built-in Chat",
+        "description": "Drop-in Ersatz für die OpenAI API — keine Codeänderungen nötig. Unterstützt Chat Completions, Embeddings und Function Calling. Inklusive leichtgewichtigem WebChat mit SSE-Streaming, Modellauswahl und Auto-Routing — keine WebSockets nötig.",
         "icon": "code",
         "color": "#38bdf8"
       },
