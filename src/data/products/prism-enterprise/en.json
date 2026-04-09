@@ -74,6 +74,10 @@
           "detail": "connect your enterprise directory"
         },
         {
+          "label": "Resilience & auto-failover",
+          "detail": "provider fallback chains, circuit breaker, context overflow handling"
+        },
+        {
           "label": "Budget limits",
           "detail": "spending caps per tenant with alerts"
         },
@@ -130,6 +134,12 @@
         "description": "Connect Active Directory or any LDAP server. Automatically sync users, enforce group-based access policies, and eliminate manual user management.",
         "icon": "shield",
         "color": "#22c55e"
+      },
+      {
+        "title": "Resilience & Auto-Failover",
+        "description": "Configure provider fallback chains per tenant. When AWS Bedrock goes down, requests automatically fail over to Azure OpenAI. The built-in circuit breaker detects failing providers in real time and temporarily removes them from rotation. Context overflow? Model Prism auto-upgrades to a larger-context model or truncates the conversation — zero manual intervention required.",
+        "icon": "shield",
+        "color": "#14b8a6"
       },
       {
         "title": "Budget Limits & Alerts",

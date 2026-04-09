@@ -74,6 +74,10 @@
           "detail": "Unternehmensverzeichnis anbinden"
         },
         {
+          "label": "Resilienz & Auto-Failover",
+          "detail": "Provider-Fallback-Ketten, Circuit Breaker, Context-Overflow-Handling"
+        },
+        {
           "label": "Budget-Limits",
           "detail": "Ausgabenobergrenzen pro Tenant mit Alerts"
         },
@@ -130,6 +134,12 @@
         "description": "Active Directory oder beliebigen LDAP-Server anbinden. Nutzer automatisch synchronisieren, gruppenbasierte Zugriffsrichtlinien durchsetzen und manuelle Nutzerverwaltung eliminieren.",
         "icon": "shield",
         "color": "#22c55e"
+      },
+      {
+        "title": "Resilienz & Auto-Failover",
+        "description": "Provider-Fallback-Ketten pro Tenant konfigurieren. Wenn AWS Bedrock ausfällt, werden Anfragen automatisch an Azure OpenAI umgeleitet. Der integrierte Circuit Breaker erkennt fehlerhafte Provider in Echtzeit und entfernt sie temporär aus der Rotation. Context-Overflow? Model Prism wechselt automatisch auf ein Modell mit größerem Kontext oder kürzt die Konversation — ohne manuellen Eingriff.",
+        "icon": "shield",
+        "color": "#14b8a6"
       },
       {
         "title": "Budget-Limits & Alerts",
