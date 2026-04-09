@@ -114,8 +114,8 @@
   "providers": {
     "title": "Supported Providers",
     "subtitle": "Model Prism connects to all major LLM providers through unified adapters.",
-    "list": ["OpenAI", "Anthropic", "Google", "AWS Bedrock", "Azure", "Mistral", "Cohere", "Ollama"],
-    "extraNote": "+ any OpenAI-compatible endpoint (vLLM, LM Studio, LocalAI, ...)"
+    "list": ["OpenAI", "Anthropic", "Google", "AWS Bedrock*", "Azure OpenAI*", "Mistral", "Cohere", "Ollama"],
+    "extraNote": "*With VPC Endpoint support & Custom Proxy. Plus any OpenAI-compatible endpoint (vLLM, LM Studio, LocalAI, ...)"
   },
   "bottomCta": {
     "title": "Ready to deploy Model Prism?",
