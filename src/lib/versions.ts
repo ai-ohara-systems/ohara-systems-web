@@ -1,5 +1,5 @@
 const GITHUB_API = 'https://api.github.com/repos/ai-ohara-systems/model-prism/releases/latest';
-const FALLBACK_VERSION = 'v1.9.2';
+const FALLBACK_VERSION = 'v1.10.0';
 
 let cached: string | null = null;
 
