@@ -120,8 +120,20 @@
   "providers": {
     "title": "Unterstützte Provider",
     "subtitle": "Model Prism verbindet sich mit allen großen LLM-Anbietern über einheitliche Adapter.",
-    "list": ["OpenAI", "Anthropic", "Google", "AWS Bedrock*", "Azure OpenAI*", "Mistral", "Cohere", "Ollama"],
-    "extraNote": "*Mit VPC Endpoint Support & Custom Proxy. Plus jeder OpenAI-kompatible Endpoint (vLLM, LM Studio, LocalAI, ...)"
+    "items": [
+      { "name": "OpenAI",       "logo": "/providers/openai.svg",    "badge": "*"  },
+      { "name": "Google",       "logo": "/providers/google.png"                   },
+      { "name": "AWS Bedrock",  "logo": "/providers/aws.svg",       "badge": "*"  },
+      { "name": "Anthropic",    "logo": "/providers/anthropic.png"                },
+      { "name": "Azure OpenAI", "logo": "/providers/azure.ico"                    },
+      { "name": "vLLM",         "logo": "/providers/vllm.ico"                     },
+      { "name": "Ollama",       "logo": "/providers/ollama.png"                   },
+      { "name": "Custom",       "logo": "/providers/custom.svg",    "badge": "**" }
+    ],
+    "footnotes": [
+      "* VPC Endpoint Support verfügbar (OpenAI, AWS Bedrock)",
+      "** Unterstützt die OpenAI Spec mit spezifischen Einstellungen wie \"System Proxy\" u.v.m."
+    ]
   },
   "bottomCta": {
     "title": "Bereit, Model Prism zu deployen?",
