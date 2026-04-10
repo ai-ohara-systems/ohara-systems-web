@@ -158,6 +158,12 @@
         "description": "Enterprise-Kunden können die Model Prism-Roadmap direkt beeinflussen. Features voten, Custom-Integrationen anfragen und sie schneller umgesetzt bekommen.",
         "icon": "star",
         "color": "#38bdf8"
+      },
+      {
+        "title": "Privacy by Default",
+        "description": "Prompt-Logging ist standardmäßig deaktiviert — es werden keine Nutzerdaten erfasst, bis ein Admin es explizit aktiviert. Wenn aktiviert, wird Prompt-Inhalt AES-256-GCM-verschlüsselt in der Datenbank gespeichert. User-Tracking nutzt anonymisierte IP-Hashes (SHA-256), niemals rohe IPs. Du behältst die volle Kontrolle darüber, was geloggt wird und wie lange.",
+        "icon": "shield",
+        "color": "#22c55e"
       }
     ]
   },

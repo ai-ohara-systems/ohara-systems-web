@@ -158,6 +158,12 @@
         "description": "Enterprise customers can directly influence the Model Prism roadmap. Vote on features, request custom integrations, and get them shipped faster.",
         "icon": "star",
         "color": "#38bdf8"
+      },
+      {
+        "title": "Privacy by Default",
+        "description": "All prompt logging is disabled by default — no user data is captured unless explicitly enabled by an admin. When enabled, prompt content is stored AES-256-GCM encrypted in the database. Unique user tracking uses anonymized IP hashes (SHA-256), never raw IPs. You stay in full control of what is logged and for how long.",
+        "icon": "shield",
+        "color": "#22c55e"
       }
     ]
   },

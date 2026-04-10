@@ -35,8 +35,8 @@
       { "value": "Self-hosted", "label": "Volle Datenkontrolle" }
     ],
     "enterpriseCta": {
-      "title": "Model Prism Enterprise",
-      "description": "LDAP/SSO, priority support, advanced features — dedizierte Enterprise-Lizenz"
+      "title": "Neugierig auf den Unterschied zwischen Free und Enterprise?",
+      "description": "Multi-Tenant-Verwaltung, LDAP/SSO, Budget-Limits, selbstoptimierendes Routing, Priority-Support — vollständigen Vergleich ansehen →"
     }
   },
   "hero": {
