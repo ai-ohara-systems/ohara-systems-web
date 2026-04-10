@@ -86,6 +86,12 @@
         "description": "Fully offline with OFFLINE=true — no outbound connections, no telemetry. Stateless architecture for horizontal scaling, Kubernetes-ready with Helm chart. Node 22 with zero CVEs.",
         "icon": "scale",
         "color": "#e879f9"
+      },
+      {
+        "title": "Privacy by Default",
+        "description": "All prompt logging is disabled by default — no user data is captured unless an admin explicitly enables it. When enabled, prompt content is stored AES-256-GCM encrypted in the database. Unique user tracking uses anonymized IP hashes (SHA-256), never raw IPs. You stay in control of what is logged.",
+        "icon": "shield",
+        "color": "#22c55e"
       }
     ]
   },

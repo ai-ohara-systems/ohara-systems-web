@@ -86,6 +86,12 @@
         "description": "Vollständig offline betreibbar mit OFFLINE=true — keine ausgehenden Verbindungen, keine Telemetrie. Stateless-Architektur für horizontales Scaling, Kubernetes-ready mit Helm Chart. Node 22 mit null CVEs.",
         "icon": "scale",
         "color": "#e879f9"
+      },
+      {
+        "title": "Privacy by Default",
+        "description": "Prompt-Logging ist standardmäßig deaktiviert — es werden keine Nutzerdaten erfasst, bis ein Admin es explizit aktiviert. Wenn aktiviert, wird der Prompt-Inhalt AES-256-GCM-verschlüsselt in der Datenbank gespeichert. User-Tracking nutzt anonymisierte IP-Hashes (SHA-256), niemals rohe IPs. Du behältst die volle Kontrolle darüber, was geloggt wird.",
+        "icon": "shield",
+        "color": "#22c55e"
       }
     ]
   },
