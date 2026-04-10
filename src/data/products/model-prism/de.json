@@ -86,7 +86,7 @@
         "description": "Vollständig offline betreibbar mit OFFLINE=true — keine ausgehenden Verbindungen, keine Telemetrie. Stateless-Architektur für horizontales Scaling, Kubernetes-ready mit Helm Chart. Node 22 mit null CVEs.",
         "icon": "scale",
         "color": "#e879f9"
-      },
+      }
     ]
   },
   "image": "ghcr.io/ai-ohara-systems/model-prism",
