@@ -87,12 +87,6 @@
         "icon": "scale",
         "color": "#e879f9"
       },
-      {
-        "title": "Privacy by Default",
-        "description": "Prompt-Logging ist standardmäßig deaktiviert — es werden keine Nutzerdaten erfasst, bis ein Admin es explizit aktiviert. Wenn aktiviert, wird der Prompt-Inhalt AES-256-GCM-verschlüsselt in der Datenbank gespeichert. User-Tracking nutzt anonymisierte IP-Hashes (SHA-256), niemals rohe IPs. Du behältst die volle Kontrolle darüber, was geloggt wird.",
-        "icon": "shield",
-        "color": "#22c55e"
-      }
     ]
   },
   "image": "ghcr.io/ai-ohara-systems/model-prism",
@@ -116,6 +110,44 @@
     ],
     "guideLabel": "Vollständige Anleitung",
     "guideUrl": "https://docs.ohara.systems/model-prism/getting-started"
+  },
+  "enterpriseTeaser": {
+    "title": "Was Enterprise freischaltet",
+    "subtitle": "Die Free Edition bringt dich weit. Enterprise bringt dich weiter — und wir sind so überzeugt vom Mehrwert, dass Lizenzen erfolgsgebunden sind.",
+    "usps": [
+      {
+        "title": "Multi-Tenant im großen Maßstab",
+        "description": "Unbegrenzt Tenants verwalten mit vollständiger Isolation — jeder mit eigenen API-Keys, Budgets und Modellzugang.",
+        "icon": "users",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "LDAP / SSO",
+        "description": "Unternehmensverzeichnis anbinden. Nutzer automatisch synchronisieren, gruppenbasierte Zugriffsrichtlinien durchsetzen.",
+        "icon": "shield",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Selbstoptimierendes Routing",
+        "description": "Der Benchmark-Agent optimiert das Routing kontinuierlich aus echtem Traffic — mit obligatorischer Dry-Run-Simulation vor jeder Änderung.",
+        "icon": "chart",
+        "color": "#22c55e"
+      },
+      {
+        "title": "Budget-Kontrolle",
+        "description": "Harte und weiche Ausgabenobergrenzen pro Tenant. Automatische Drosselung bei Limitüberschreitung — keine bösen Überraschungen.",
+        "icon": "cost",
+        "color": "#e879f9"
+      },
+      {
+        "title": "Erfolgsgebundene Lizenzierung",
+        "description": "Wir finden die günstigste Lizenz für dich — basierend auf deinen Einsparungen oder Festpreis, was günstiger ist. Wir glauben an den Mehrwert, den wir liefern.",
+        "icon": "star",
+        "color": "#f59e0b"
+      }
+    ],
+    "ctaLabel": "Vollständigen Free vs. Enterprise Vergleich ansehen",
+    "ctaUrl": "/products/prism-enterprise"
   },
   "providers": {
     "title": "Unterstützte Provider",

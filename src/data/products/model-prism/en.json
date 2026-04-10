@@ -86,12 +86,6 @@
         "description": "Fully offline with OFFLINE=true — no outbound connections, no telemetry. Stateless architecture for horizontal scaling, Kubernetes-ready with Helm chart. Node 22 with zero CVEs.",
         "icon": "scale",
         "color": "#e879f9"
-      },
-      {
-        "title": "Privacy by Default",
-        "description": "All prompt logging is disabled by default — no user data is captured unless an admin explicitly enables it. When enabled, prompt content is stored AES-256-GCM encrypted in the database. Unique user tracking uses anonymized IP hashes (SHA-256), never raw IPs. You stay in control of what is logged.",
-        "icon": "shield",
-        "color": "#22c55e"
       }
     ]
   },
@@ -116,6 +110,44 @@
     ],
     "guideLabel": "Full setup guide",
     "guideUrl": "https://docs.ohara.systems/model-prism/getting-started"
+  },
+  "enterpriseTeaser": {
+    "title": "Curious what Enterprise unlocks?",
+    "subtitle": "The free edition gets you far. Enterprise takes you further — and we're so confident in the value, licenses are priced on your actual savings.",
+    "usps": [
+      {
+        "title": "Multi-Tenant at Scale",
+        "description": "Manage unlimited tenants with full isolation — each with their own API keys, budgets, and model access controls.",
+        "icon": "users",
+        "color": "#38bdf8"
+      },
+      {
+        "title": "LDAP / SSO",
+        "description": "Connect your enterprise directory. Sync users automatically, enforce group-based access policies.",
+        "icon": "shield",
+        "color": "#818cf8"
+      },
+      {
+        "title": "Self-Optimizing Routing",
+        "description": "The Benchmark Agent continuously fine-tunes routing from real traffic — with mandatory dry-run simulation before every change.",
+        "icon": "chart",
+        "color": "#22c55e"
+      },
+      {
+        "title": "Budget Controls",
+        "description": "Hard and soft spending caps per tenant. Automatic throttling when limits are reached — no surprises on the bill.",
+        "icon": "cost",
+        "color": "#e879f9"
+      },
+      {
+        "title": "Savings-Based Licensing",
+        "description": "We find the cheapest license for you — savings-based or a fixed fee, whichever is lower. We believe in the value we deliver.",
+        "icon": "star",
+        "color": "#f59e0b"
+      }
+    ],
+    "ctaLabel": "See the full Free vs. Enterprise comparison",
+    "ctaUrl": "/en/products/prism-enterprise"
   },
   "providers": {
     "title": "Supported Providers",

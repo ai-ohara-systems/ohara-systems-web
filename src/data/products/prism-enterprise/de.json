@@ -169,7 +169,7 @@
   },
   "licensing": {
     "title": "Flexible Lizenzierung",
-    "description": "Enterprise-Lizenzen werden als Offline-Keys ausgeliefert — keine Telemetrie, keine Internetverbindung erforderlich. Vollständig air-gapped deploybar. Die Lizenzvalidierung erfolgt lokal per asymmetrischer Kryptographie.",
+    "description": "Enterprise-Lizenzen werden als Offline-Keys ausgeliefert — keine Telemetrie, keine Internetverbindung erforderlich. Vollständig air-gapped deploybar. Die Lizenzvalidierung erfolgt lokal per asymmetrischer Kryptographie. Wir finden immer die günstigste Lizenz für dich: erfolgsgebunden oder Festpreis, was günstiger ist. Wir glauben an den Mehrwert, den wir liefern — und gewinnen daher nur, wenn du gewinnst.",
     "options": [
       {
         "title": "Offline-Key",

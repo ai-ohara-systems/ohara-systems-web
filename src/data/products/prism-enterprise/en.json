@@ -169,7 +169,7 @@
   },
   "licensing": {
     "title": "Flexible Licensing",
-    "description": "Enterprise licenses are delivered as offline keys — no telemetry, no internet connection required. Fully deployable in air-gapped environments. License validation is performed locally using asymmetric cryptography.",
+    "description": "Enterprise licenses are delivered as offline keys — no telemetry, no internet connection required. Fully deployable in air-gapped environments. License validation is performed locally using asymmetric cryptography. We always find the cheapest license for you: savings-based or a fixed fee, whichever is lower. We believe in the value we deliver — so we only win when you do.",
     "options": [
       {
         "title": "Offline Key",
